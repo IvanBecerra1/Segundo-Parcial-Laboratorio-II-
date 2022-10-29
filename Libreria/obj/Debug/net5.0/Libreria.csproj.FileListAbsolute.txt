@@ -1,0 +1,12 @@
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\bin\Debug\net5.0\Libreria.deps.json
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\bin\Debug\net5.0\Libreria.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\bin\Debug\net5.0\Libreria.pdb
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.csproj.AssemblyReference.cache
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.AssemblyInfoInputs.cache
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.AssemblyInfo.cs
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.csproj.CoreCompileInputs.cache
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\refint\Libreria.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\Libreria.pdb
+C:\Users\Ivan\Desktop\parcial II laboratorio\Libreria\obj\Debug\net5.0\ref\Libreria.dll
