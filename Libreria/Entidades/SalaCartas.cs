@@ -17,6 +17,11 @@ namespace Libreria.Entidades
             this.escobaQuince = escobaQuince;
         }
 
+        public List<Carta> cartasEnElMesaTest()
+        {
+            return this.escobaQuince.CartasMesa;
+        }
+
         public override void IniciarJuego()
         {
             // llena el mazo

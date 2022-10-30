@@ -14,7 +14,6 @@ namespace Libreria.Interfaces
     /// </summary>
     public interface IJuegos
     {
-
         public List<Carta> LlenarMazo(List<Carta> listaCartas);
 
         /// <summary>

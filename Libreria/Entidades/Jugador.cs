@@ -10,14 +10,11 @@ namespace Libreria.Entidades
     {
         private int id;
         private static int idCount;
-
         private string nombre;
+
         private List<Carta> cartas;
         private List<Carta> cartasEnBodega;
-
-        private int partidasJugadas;
-        private int partidasPerdidas;
-        private int partidasGanadaS;
+        private Estadisticas estadisticas;
 
 
         public Jugador()
@@ -46,12 +43,9 @@ namespace Libreria.Entidades
         public int Id { get => id; set => id = value; }
         public static int IdCount { get => idCount; set => idCount = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public int PartidasJugadas { get => partidasJugadas; set => partidasJugadas = value; }
-        public int PartidasPerdidas { get => partidasPerdidas; set => partidasPerdidas = value; }
-        public int PartidasGanadaS { get => partidasGanadaS; set => partidasGanadaS = value; }
         public List<Carta> Cartas { get => cartas; set => cartas = value; }
         public List<Carta> CartasEnBodega { get => cartasEnBodega; set => cartasEnBodega = value; }
-
+        public Estadisticas Estadisticas { get => estadisticas; set => estadisticas = value; }
 
         public static bool operator ==(Jugador jugadorA, Jugador JugadorB)
         {
