@@ -146,6 +146,21 @@ namespace Libreria.Servicios
         }
 
         /// <summary>
+        /// Elimina las cartas que coincidieron
+        /// </summary>
+        /// <param name="cartasSeleccionada"></param>
+        /// <returns></returns>
+        public bool SacarCartaDelMeson(List<Carta> cartasSeleccionada)
+        {
+            
+            foreach (var aux in cartasSeleccionada)
+            {
+                this.CartasMesa.Remove(aux);
+            }
+
+            return true;
+        }
+        /// <summary>
         /// Mezcla el mazo de cartas
         /// </summary>
         /// <param name="listaCartas"></param>

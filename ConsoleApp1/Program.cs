@@ -13,9 +13,15 @@ namespace ConsoleApp1
 
             Sala sala = new SalaCartas(3, escoba, escoba);
 
+
+
             ////
+            ///
+
             sala.IniciarJuego();
 
+            // cargando jugadores.
+            sala.CargarJugadores(1);
 
             /*
             

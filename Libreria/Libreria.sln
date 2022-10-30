@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libreria", "Libreria.csproj", "{A96A62B5-7998-4D29-A42B-D0696AC07AD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo.csproj", "{A96A62B5-7998-4D29-A42B-D0696AC07AD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "..\ConsoleApp1\ConsoleApp1.csproj", "{FA1BB1F9-C5F1-4D80-8661-20416089E52F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_App", "..\WindowsFormCartas\GUI_App.csproj", "{0654F7C6-5DB8-4D91-8D57-E150A71CDD5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FA1BB1F9-C5F1-4D80-8661-20416089E52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA1BB1F9-C5F1-4D80-8661-20416089E52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA1BB1F9-C5F1-4D80-8661-20416089E52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0654F7C6-5DB8-4D91-8D57-E150A71CDD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0654F7C6-5DB8-4D91-8D57-E150A71CDD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0654F7C6-5DB8-4D91-8D57-E150A71CDD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0654F7C6-5DB8-4D91-8D57-E150A71CDD5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

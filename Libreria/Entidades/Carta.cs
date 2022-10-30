@@ -1,7 +1,6 @@
 ﻿using Libreria.Enumeraciones;
 using System;
 using System.Runtime.InteropServices;
-
 namespace Libreria.Entidades
 {
     public class Carta
@@ -27,7 +26,7 @@ namespace Libreria.Entidades
         {
             if (obj is Carta)
             {
-                return (this == ((Carta)obj);
+                return (this == ((Carta)obj));
             }
             return base.Equals(obj);
         }

@@ -30,6 +30,11 @@ namespace Libreria.Entidades
             this.nombre = nombre;
         }
 
+        public override string ToString()
+        {
+            return $"Jugador: {this.nombre}";
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is Jugador)

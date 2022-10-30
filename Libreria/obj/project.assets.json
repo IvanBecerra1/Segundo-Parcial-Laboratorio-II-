@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\Libreria\\Libreria.csproj",
-      "projectName": "Libreria",
-      "projectPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\Libreria\\Libreria.csproj",
+      "projectUniqueName": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\Libreria\\Modelo.csproj",
+      "projectName": "Modelo",
+      "projectPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\Libreria\\Modelo.csproj",
       "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\Libreria\\obj\\",
       "projectStyle": "PackageReference",
