@@ -106,7 +106,7 @@ namespace GUI_App.Entidades
 
             List<Jugador> lista = formAgregarJugador.ListaJugadores;
 
-            this.sala.CargarJugadores(3);
+      //      this.sala.CargarJugadores(3);
 
         }
         #endregion

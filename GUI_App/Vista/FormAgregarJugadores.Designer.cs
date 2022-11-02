@@ -34,10 +34,8 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridJugadores = new System.Windows.Forms.DataGridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridJugadores)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -57,6 +55,7 @@
             this.btnAgregarJugador.TabIndex = 1;
             this.btnAgregarJugador.Text = "Agregar";
             this.btnAgregarJugador.UseVisualStyleBackColor = true;
+            this.btnAgregarJugador.Click += new System.EventHandler(this.btnAgregarJugador_Click);
             // 
             // label1
             // 
@@ -97,15 +96,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar jugadores";
             // 
-            // dataGridJugadores
-            // 
-            this.dataGridJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridJugadores.Location = new System.Drawing.Point(524, 107);
-            this.dataGridJugadores.Name = "dataGridJugadores";
-            this.dataGridJugadores.RowTemplate.Height = 25;
-            this.dataGridJugadores.Size = new System.Drawing.Size(398, 165);
-            this.dataGridJugadores.TabIndex = 6;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -120,15 +110,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1075, 634);
-            this.Controls.Add(this.dataGridJugadores);
+            this.ClientSize = new System.Drawing.Size(558, 446);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAceptar);
             this.Name = "FormAgregarJugadores";
             this.Text = "FormAgregarJugadores";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridJugadores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,7 +129,6 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridJugadores;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

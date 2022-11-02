@@ -18,19 +18,21 @@ namespace Libreria.Entidades
         protected int rondas;
         protected List<Jugador> listaJugadores;
 
+
         //  private JuegoEscoba juego; // T => EscobaQuince u otro;
         /// <summary>
         /// Ahora La clase sala podra ser cualquier tipo de juego que implemente IJuegos
         /// </summary>
-        protected IJuegos juego;
+        protected IJuegoDeCarta<Carta> juego;
 
-        public Sala(int rondas, IJuegos juego)
+        public Sala(int rondas, IJuegoDeCarta<Carta> juego)
         {
             this.listaJugadores = new List<Jugador>();
             this.rondas = rondas;
             this.juego = juego;
         }
 
+        /*
         public int Rondas { get => rondas; set => rondas = value; }
 
         public abstract void IniciarJuego();
@@ -67,7 +69,7 @@ namespace Libreria.Entidades
 
             this.listaJugadores.Add(jugador2);
             this.listaJugadores.Add(jugador1);
-        }
+        }*/
 
     }
 }

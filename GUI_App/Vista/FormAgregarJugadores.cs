@@ -50,5 +50,9 @@ namespace GUI_App.Vista
             this.listBox1.DataSource = listaJugadores;
         }
 
+        private void btnAgregarJugador_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

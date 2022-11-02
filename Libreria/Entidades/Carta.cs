@@ -7,12 +7,15 @@ namespace Libreria.Entidades
     {
         private int id;
         private static int idCount;
-        private EPalos palo;
+        private ETipoCarta palo;
         private int numeroPalo;
 
-        public Carta(EPalos palo, int numeroPalo)
+        public Carta()
         {
             this.id = idCount++;
+        }
+        public Carta(ETipoCarta palo, int numeroPalo) : this()
+        {
             this.palo = palo;
             this.numeroPalo = numeroPalo;
         }
@@ -35,7 +38,7 @@ namespace Libreria.Entidades
             return base.GetHashCode();
         }
         public int Id { get => id; set => id = value; }
-        public EPalos Palo { get => palo; set => palo = value; }
+        public ETipoCarta Palo { get => palo; set => palo = value; }
         public int NumeroPalo { get => numeroPalo; set => numeroPalo = value; }
 
         public static bool operator ==(Carta cartaA, Carta cartaB)

@@ -4,8 +4,6 @@ C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\Consol
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.runtimeconfig.dev.json
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.dll
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.pdb
-C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\Libreria.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\Libreria.pdb
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.AssemblyReference.cache
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfoInputs.cache
@@ -17,3 +15,11 @@ C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\refint
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.pdb
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.genruntimeconfig.cache
 C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\obj\Debug\net5.0\ref\ConsoleApp1.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\Modelo.dll
+C:\Users\Ivan\Desktop\parcial II laboratorio\ConsoleApp1\bin\Debug\net5.0\Modelo.pdb

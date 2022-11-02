@@ -4,10 +4,16 @@
     <Compile Update="Vista\FormAgregarJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vista\FormElUno.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Vista\FormEscobaQuince.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Vista\FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vista\FormSalaElUno.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

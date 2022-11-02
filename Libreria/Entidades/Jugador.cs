@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,15 @@ namespace Libreria.Entidades
         private static int idCount;
         private string nombre;
 
-        private List<Carta> cartas;
-        private List<Carta> cartasEnBodega;
+        private List<CartaUno> cartas;
+        private List<CartaUno> cartasEnBodega;
         private Estadisticas estadisticas;
 
 
         public Jugador()
         {
-            this.cartas = new List<Carta>();
-            this.cartasEnBodega = new List<Carta>();
+            this.cartas = new List<CartaUno>();
+            this.cartasEnBodega = new List<CartaUno>();
         }
         public Jugador(string nombre) : this()
         {
@@ -43,8 +44,8 @@ namespace Libreria.Entidades
         public int Id { get => id; set => id = value; }
         public static int IdCount { get => idCount; set => idCount = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public List<Carta> Cartas { get => cartas; set => cartas = value; }
-        public List<Carta> CartasEnBodega { get => cartasEnBodega; set => cartasEnBodega = value; }
+        public List<CartaUno> Cartas { get => cartas; set => cartas = value; }
+        public List<CartaUno> CartasEnBodega { get => cartasEnBodega; set => cartasEnBodega = value; }
         public Estadisticas Estadisticas { get => estadisticas; set => estadisticas = value; }
 
         public static bool operator ==(Jugador jugadorA, Jugador JugadorB)

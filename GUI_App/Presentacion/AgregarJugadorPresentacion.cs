@@ -21,17 +21,9 @@ namespace GUI_App.Presentacion
             this.agregarJugadores = agregarJugadores;
 
             this.agregarJugadores.EventoAgregarJugador += AgregarJugador;
-            this.agregarJugadores.EventoAceptar += Aceptar;
 
 
-            this.agregarJugadores.AgregarJugadoresBindigSource(jugadoresBindingSource);
-
-            //Abre el formulario;
-         //   this.agregarJugadores.ShowDialog();
-        }
-
-        private void Aceptar(object? sender, EventArgs e)
-        {
+            this.agregarJugadores.AgregarJugadoresBindigSource(this.jugadoresBindingSource);
 
         }
 

@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 
 namespace Libreria.Servicios
 {
-    public class EscobaQuinceServicio : IJuegos, IEscobaQuince
+    /// <summary>
+    /// Funciones del juego Escoba de Quince
+    /// </summary>
+    public class EscobaQuinceServicio : IJuegoDeCarta<Carta>
     {
-        private JuegoCartas juego;
+        private JuegoCartas<Carta> juego;
 
         public List<Carta> CartasMazo { 
             get => new List<Carta>(this.juego.MazoDeCartas); 
@@ -20,7 +23,7 @@ namespace Libreria.Servicios
 
         public EscobaQuinceServicio()
         {
-            this.juego = new JuegoCartas();
+            this.juego = new JuegoCartas<Carta>();
         }
 
 
@@ -94,13 +97,13 @@ namespace Libreria.Servicios
             }
             for (int i = 0; i < 10; i++)
             {
-                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.EPalos.ESPADA, i + 1));
+                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.ETipoCarta.ESPADA, i + 1));
 
-                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.EPalos.BASTON, i + 1));
+                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.ETipoCarta.BASTON, i + 1));
 
-                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.EPalos.COPA, i + 1));
+                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.ETipoCarta.COPA, i + 1));
 
-                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.EPalos.ORO, i + 1));
+                this.juego.MazoDeCartas.Push(new Carta(Enumeraciones.ETipoCarta.ORO, i + 1));
             }
 
             return new List<Carta>(this.juego.MazoDeCartas);

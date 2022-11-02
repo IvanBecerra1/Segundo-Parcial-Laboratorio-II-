@@ -52,7 +52,7 @@ namespace GUI_App.Vista
             /// 
 
 
-
+            /*
             juego = new EscobaQuinceServicio();
             sala = new SalaCartas(3, juego, juego);
 
@@ -101,7 +101,6 @@ namespace GUI_App.Vista
                                 Label lab = (Label)label;
                                 lab.Text = "Panel Mesa uno";
 
-                            }*/
                         }
                     }
 
@@ -150,8 +149,9 @@ namespace GUI_App.Vista
 
                 count++;
 
-
+     
             }
+*/
         }
 
         public event EventHandler EventoIniciarPartida;

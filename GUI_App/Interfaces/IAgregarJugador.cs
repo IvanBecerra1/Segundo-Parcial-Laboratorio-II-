@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Libreria.Enumeraciones
+namespace GUI_App.Interfaces
 {
-    public enum EPalos
+    public interface IAgregarJugador
     {
-        ESPADA,
-        BASTON,
-        ORO,
-        COPA
     }
 }
