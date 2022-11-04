@@ -1,4 +1,5 @@
 ﻿using Libreria.Entidades;
+using Libreria.Enumeraciones;
 using Libreria.Interfaces;
 using System;
 using System.Collections;
@@ -19,7 +20,7 @@ namespace Libreria.Servicios
         public List<Carta> CartasMazo { 
             get => new List<Carta>(this.juego.MazoDeCartas); 
         }
-        public List<Carta> CartasMesa { get => this.juego.MesaDeCartas; }
+        public List<Carta> CartasMesa { get => new List<Carta>(this.juego.MazoDeCartas); }
 
         public EscobaQuinceServicio()
         {
@@ -71,7 +72,7 @@ namespace Libreria.Servicios
         /// </summary>
         /// <param name="listaCartas"></param>
         /// <returns>Devuelve la lista de cartas que se encuentran en mesa</returns>
-        public List<Carta> CartasDisponibles(List<Carta> listaCartas)
+        public List<Carta> CartasDisponibles()
         {
             if (this.juego.MazoDeCartas == null || this.juego.MazoDeCartas.Any() == false)
             {
@@ -81,7 +82,7 @@ namespace Libreria.Servicios
             {
                 Console.WriteLine(aux.ToString());
             }
-            return this.juego.MesaDeCartas;
+            return null;// this.juego.MesaDeCartas;
         }
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace Libreria.Servicios
 
             do
             {
-                this.juego.MesaDeCartas.Add(this.juego.MazoDeCartas.Pop());
+                //this.juego.MesaDeCartas.Add(this.juego.MazoDeCartas.Pop());
             } while (this.juego.MesaDeCartas.Count <= 3);
         }
 
@@ -153,7 +154,7 @@ namespace Libreria.Servicios
         /// </summary>
         /// <param name="cartasSeleccionada"></param>
         /// <returns></returns>
-        public bool SacarCartaDelMeson(List<Carta> cartasSeleccionada)
+        public bool SacarCartaDelMeson(Stack<Carta> cartasSeleccionada)
         {
             
             foreach (var aux in cartasSeleccionada)
@@ -176,6 +177,41 @@ namespace Libreria.Servicios
 
             this.juego.MazoDeCartas = new Stack<Carta>(test2);
             return this.CartasMazo;
+        }
+
+        public Carta MostrarCartaMesa()
+        {
+            throw new NotImplementedException();
+        }
+
+        bool IJuegoDeCarta<Carta>.AgregarCartasAlMeson(Carta carta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Carta> VerificarCartasEspeciales(List<Carta> cartas, out ETipoCarta accion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Carta> LlenarMazo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Carta> BarajarCartas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Carta SiguienteCarta()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Carta> MezclarMazo()
+        {
+            throw new NotImplementedException();
         }
     }
 }

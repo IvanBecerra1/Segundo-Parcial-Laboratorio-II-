@@ -1,4 +1,5 @@
 ﻿using Libreria.Entidades;
+using Libreria.Enumeraciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Libreria.Interfaces
         /// </summary>
         /// <param name="listaCartas"></param>
         /// <returns></returns>
-        public List<T> LlenarMazo(List<T> listaCartas);
+        public List<T> LlenarMazo();
 
         /// <summary>
         /// Barajar cartas es darle cartas a cada jugador.
@@ -31,7 +32,7 @@ namespace Libreria.Interfaces
         /// <param name="listaCartas"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public List<T> BarajarCartas(List<T> listaCartas);
+        public List<T> BarajarCartas();
 
         /// <summary>
         /// Permite dar una carta,
@@ -40,20 +41,20 @@ namespace Libreria.Interfaces
         /// </summary>
         /// <param name="listaCartas"></param>
         /// <returns></returns>
-        public T SiguienteCarta(List<T> listaCartas);
+        public T SiguienteCarta();
 
         /// <summary>
         /// Muestra las cartas disponibles en la Mesa.
         /// </summary>
         /// <param name="listaCartas"></param>
         /// <returns></returns>
-        public List<T> CartasDisponibles(List<T> listaCartas);
+        public List<T> CartasDisponibles();
 
         /// <summary>
         /// Agrega las cartas en mesa con los que se va a jugar
         /// </summary>
         /// <param name="carta"></param>
-        public void AgregarCartasAlMeson(T carta);
+        public bool AgregarCartasAlMeson(T carta);
 
         /// <summary>
         /// Metodo que servira para comparar las cartas
@@ -69,7 +70,20 @@ namespace Libreria.Interfaces
         /// </summary>
         /// <param name="listaCartas"></param>
         /// <returns></returns>
-        public List<T> MezclarMazo(List<T> listaCartas);
+        public List<T> MezclarMazo();
 
+
+        /// <summary>
+        /// Devuelve la carta que este en Mesa.
+        /// </summary>
+        /// <returns></returns>
+        public T MostrarCartaMesa();
+
+        /// <summary>
+        /// Funcion donde se verifica si la carta que esta
+        /// puesta en mesa es una especial
+        /// </summary>
+        /// <returns>Devolvera la lista modificada</returns>
+        public List<T> VerificarCartasEspeciales(List<T> cartas, out ETipoCarta accion);
     }
 }

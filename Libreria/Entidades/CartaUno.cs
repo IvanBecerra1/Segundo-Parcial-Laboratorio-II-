@@ -18,6 +18,11 @@ namespace Modelo.Entidades
         {
             this.color = color;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + " - Color: " + this.color.ToString();
+        }
         public ETipoColor Color { get => color; set => color = value; }
     }
 }

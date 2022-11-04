@@ -13,19 +13,26 @@ namespace Modelo.Entidades
         public List<Jugador> listaJugador;
         public Jugador turnoJugador;
 
-        public SalaUno(int rondas, IJuegoDeCarta<Carta> juego) : base(rondas, juego)
+        public SalaUno(int rondas, IJuegoDeCarta<CartaUno> juego) : base(rondas, juego)
         {
-
-            this.juego.LlenarMazo(null);
-            this.juego.MezclarMazo(null);
-            this.juego.BarajarCartas(null);
-
+            this.CargarPartida();
         }
 
-        public List<CartaUno> tirarCarta()
+
+        public void CargarPartida()
+        {
+            this.juego.LlenarMazo();
+            this.juego.MezclarMazo();
+        }
+
+        public List<CartaUno> DarCartaJugador()
+        {
+            return this.juego.BarajarCartas();
+        }
+
+        public bool tirarCarta()
         {
 
-            return null;
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Libreria.Interfaces;
+using Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,53 +24,14 @@ namespace Libreria.Entidades
         /// <summary>
         /// Ahora La clase sala podra ser cualquier tipo de juego que implemente IJuegos
         /// </summary>
-        protected IJuegoDeCarta<Carta> juego;
+        protected IJuegoDeCarta<CartaUno> juego;
 
-        public Sala(int rondas, IJuegoDeCarta<Carta> juego)
+        public Sala(int rondas, IJuegoDeCarta<CartaUno> juego)
         {
             this.listaJugadores = new List<Jugador>();
             this.rondas = rondas;
             this.juego = juego;
         }
-
-        /*
-        public int Rondas { get => rondas; set => rondas = value; }
-
-        public abstract void IniciarJuego();
-        public abstract bool TurnoJugador(Jugador aux);
-
-        public void CargarJugadores(int maxJugadores)
-        {
-            // jugadores maximo por el momento solo 2
-            if (this.listaJugadores.Count == maxJugadores)
-            {
-                return;
-            }
-
-            Console.WriteLine("/// JUGADORES PEPE Y RAMIREZ");
-            Jugador jugador1 = new Jugador("pepe");
-            Jugador jugador2 = new Jugador("ramirez");
-
-            Console.WriteLine("/// REPARTIENDO CARTAS A CADA JUGADOR");
-
-            jugador1.Cartas = this.juego.BarajarCartas(null);
-            jugador2.Cartas = this.juego.BarajarCartas(null);
-
-            Console.WriteLine("/// CARTAS JUADOR 1");
-            jugador1.Cartas.ForEach(aux =>
-            {
-                Console.WriteLine(aux.ToString());
-            });
-
-            Console.WriteLine("/// CARTAS JUADOR 2");
-            jugador2.Cartas.ForEach(aux =>
-            {
-                Console.WriteLine(aux.ToString());
-            });
-
-            this.listaJugadores.Add(jugador2);
-            this.listaJugadores.Add(jugador1);
-        }*/
 
     }
 }

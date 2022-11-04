@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Libreria.Entidades;
+using Libreria.Enumeraciones;
 using Libreria.Servicios;
 using Modelo.Entidades;
 using Modelo.Servicios;
@@ -14,10 +16,11 @@ namespace ConsoleApp1
     public class Program
     {
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
-      
+
 
         static void Main(string[] args)
         {
+
             UnoServicio unoServicio = new UnoServicio();
 
 
@@ -32,8 +35,8 @@ namespace ConsoleApp1
 
             /// iniciar variables:
             /// 
-            unoServicio.LlenarMazo(null);
-            unoServicio.MezclarMazo(null);
+            unoServicio.LlenarMazo();
+            unoServicio.MezclarMazo();
             unoServicio.PonerCartaAlMeson();
 
             List<CartaUno> listaCartaMazo = unoServicio.CartasMazo;
@@ -42,7 +45,7 @@ namespace ConsoleApp1
 
             foreach (var aux in listajugadores)
             {
-                aux.Cartas = unoServicio.BarajarCartas(null);
+                aux.Cartas = unoServicio.BarajarCartas();
                 Console.WriteLine($"{aux.Nombre}- cartas del jugador----");
 
                 foreach (var aux2 in aux.Cartas)
@@ -55,11 +58,34 @@ namespace ConsoleApp1
             listaCartaMazo = unoServicio.CartasMazo;
             listaCartaMesa = unoServicio.CartasMesa;
 
+            string option = "";
             do
             {
 
                 foreach (var aux in listajugadores)
                 {
+
+                    ETipoCarta tipo = ETipoCarta.NONE;
+                    Console.WriteLine("CARTA EN MESA");
+                    Console.WriteLine(unoServicio.MostrarCartaMesa());
+                    unoServicio.VerificarCartasEspeciales(aux.Cartas, out tipo);
+
+                    Console.WriteLine( "Accion: " + tipo.ToString());
+
+                    if (tipo == ETipoCarta.CAMBIAR_COLOR)
+                    {
+                        /// Seleccione el color de carta
+                    }
+
+                    if (tipo == ETipoCarta.INVERTIR_RONDA) { 
+                        // Invertimos la lista
+                        // Terminamos el bucle
+                    }
+
+                    if (tipo == ETipoCarta.SALTEAR_JUGADOR)
+                    {
+                        // Salteamos el bucle con un continue;
+                    }
 
                     Console.WriteLine("----Turno jugador: " + aux.Nombre);
 
@@ -67,17 +93,76 @@ namespace ConsoleApp1
                     
                     
                     Console.WriteLine("1. Tirar carta");
-                    Console.WriteLine("1. Recojer carta");
+                    Console.WriteLine("2. Recojer carta");
+                    Console.WriteLine("3. Pasar turno");
 
+                    option = Console.ReadLine();
+
+                    switch (option)
+                    {
+                        case "1":
+
+                            Console.WriteLine("Cartas disponible");
+                            aux.Cartas.ForEach(aux =>
+                            {
+                                Console.WriteLine(aux);
+                            });
+
+                            int id = int.Parse(Console.ReadLine());
+                            
+                           // si no se pudo agregar
+                            if (unoServicio.AgregarCartasAlMeson(seleccionarCarta(id, aux.Cartas)) == false)
+                            {
+                                /// Podria implementar un bucle pero es solo testeo.
+                                Console.WriteLine("No se pudo agregar la carta, pierdes el turno");
+
+                            }
+                            else
+                            {
+                                aux.Cartas.Remove(seleccionarCarta(id, aux.Cartas));
+                                Console.WriteLine("Se agrego tu carta al meson, y se borro la carta tirada.");
+                            }
+                            // Si se pudo agregar solo le removemos la carta.
+
+
+                            // Restar cartas.
+
+                            break;
+                        case "2":
+
+                            aux.Cartas.Add(unoServicio.SiguienteCarta());
+
+                            Console.WriteLine("tus nuevas cartas");
+                            aux.Cartas.ForEach(aux =>
+                            {
+                                Console.WriteLine(aux);
+                            });
+
+                            break;
+
+                        case "3":
+
+                            aux.Cartas.Add(unoServicio.SiguienteCarta());
+
+                            /// Podria implementar un metodo que no termine o pase el turno hasta que seleccione una carta.
+                            /// 
+                            Console.WriteLine("Para pasar es necesario que agarres una carta");
+                            aux.Cartas.ForEach(aux =>
+                            {
+                                Console.WriteLine(aux);
+                            });
+                            break;
+                    }
                 }
-
-
-
             } while (++turno != 3);
 
 
+             
+
+            string tipoDevuelto = "";
 
 
+            Console.WriteLine( test(0, out tipoDevuelto)  + " tipo: " + tipoDevuelto);
             #region 
             /*
 
@@ -95,6 +180,44 @@ namespace ConsoleApp1
 
             */
             #endregion
+
+        }
+    
+
+        public static bool test(int i, out string tipo)
+        {
+            bool isvalid = false;
+            tipo = "";
+
+            if (i == 1)
+            {
+                tipo = "te comiste 4";
+
+            }
+
+            if (i == 2)
+            {
+                tipo = "perdiste tu turno";
+
+            }
+
+            if (i == 2)
+            {
+                tipo = "se cambia inverte la ronda";
+
+            }
+
+            if (i == 3)
+            {
+                tipo = "se cambia los colores de carta";
+            }
+
+            return isvalid;
+        }
+        public static CartaUno seleccionarCarta(int id, List<CartaUno> lista)
+        {
+
+            return lista.Find(aux => aux.Id == id);
 
         }
 

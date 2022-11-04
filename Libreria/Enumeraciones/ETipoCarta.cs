@@ -9,17 +9,16 @@ namespace Libreria.Enumeraciones
     public enum ETipoCarta
     {
         NONE,
+        ROBA_DOS,
+        INVERTIR_RONDA,
+        ROBA_CUATRO,
+        CAMBIAR_COLOR,
+        SALTEAR_JUGADOR,
+
 
         ESPADA,
         BASTON,
         ORO,
-        COPA,
-
-        ROBA_DOS,
-        ROBA_CUATRO,
-        INVERTIR_RONDA,
-        CAMBIAR_COLOR,
-        SALTEAR_JUGADOR
-
+        COPA
     }
 }

@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Runtime.CompilerServices;
 using Modelo.Entidades;
 using Modelo.Enumeraciones;
+using System.ComponentModel;
 
 namespace Modelo.Servicios
 {
@@ -24,6 +25,9 @@ namespace Modelo.Servicios
 
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
         private VerificarCarta verificar;
+
+        private delegate bool VerificarCartaEspeciales(CartaUno carta);
+        private VerificarCartaEspeciales verificarEspeciales;
 
         public UnoServicio()
         {
@@ -40,20 +44,30 @@ namespace Modelo.Servicios
         {
             get => new List<CartaUno>(this.juego.MazoDeCartas);
         }
-        public List<CartaUno> CartasMesa { get => this.juego.MesaDeCartas; }
+        public List<CartaUno> CartasMesa { get => new List<CartaUno>(this.juego.MazoDeCartas); }
 
-        public void AgregarCartasAlMeson(CartaUno carta)
+        /// <summary>
+        /// Funcion que cumple para agregar cartas 
+        /// </summary>
+        /// <param name="carta">Carta a enviar</param>
+        /// <returns>Devuelve true o false si se pudo agregar la carta</returns>
+        public bool AgregarCartasAlMeson(CartaUno carta)
         {
+            if (this.verificar(this.juego.MesaDeCartas.Peek(), carta) == false)
+            {
+                return false;
+            }
 
-            this.juego.MesaDeCartas.Add(carta);
+            this.juego.MesaDeCartas.Push(carta);
+            return true;
         }
 
         public void PonerCartaAlMeson()
         {
-            this.juego.MesaDeCartas.Add(this.SiguienteCarta(null));
+            this.juego.MesaDeCartas.Push(this.SiguienteCarta());
         }
 
-        public List<CartaUno> BarajarCartas(List<CartaUno> listaCartas)
+        public List<CartaUno> BarajarCartas()
         {
             if (!this.juego.MazoDeCartas.Any())
             {
@@ -63,7 +77,7 @@ namespace Modelo.Servicios
 
             do
             {
-                cartasDevueltas.Add(SiguienteCarta(listaCartas));
+                cartasDevueltas.Add(SiguienteCarta());
             } while (cartasDevueltas.Count <= 6);
 
             return cartasDevueltas;
@@ -75,7 +89,7 @@ namespace Modelo.Servicios
         /// <param name="listaCartas"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public List<CartaUno> CartasDisponibles(List<CartaUno> listaCartas)
+        public List<CartaUno> CartasDisponibles()
         {
             throw new NotImplementedException();
         }
@@ -94,7 +108,7 @@ namespace Modelo.Servicios
           
         }
 
-        public List<CartaUno> LlenarMazo(List<CartaUno> listaCartas)
+        public List<CartaUno> LlenarMazo()
         {
             if (this.juego.MazoDeCartas == null)
             {
@@ -143,7 +157,7 @@ namespace Modelo.Servicios
             return new List<CartaUno>(this.juego.MazoDeCartas);
         }
 
-        public List<CartaUno> MezclarMazo(List<CartaUno> listaCartas)
+        public List<CartaUno> MezclarMazo()
         {
             var random = new Random();
             List<CartaUno> auxList = new List<CartaUno>(this.juego.MazoDeCartas);
@@ -153,7 +167,8 @@ namespace Modelo.Servicios
             return this.CartasMazo;
         }
 
-        public CartaUno SiguienteCarta(List<CartaUno> listaCartas)
+
+        public CartaUno SiguienteCarta()
         {
 
             if (this.juego.MazoDeCartas == null || !this.juego.MazoDeCartas.Any())
@@ -164,5 +179,38 @@ namespace Modelo.Servicios
             return this.juego.MazoDeCartas.Pop();
         }
 
+
+        public CartaUno MostrarCartaMesa()
+        { 
+            if (this.juego.MesaDeCartas.Any() == false)
+            {
+                return null;
+            }
+
+            return this.juego.MesaDeCartas.Peek();
+        }
+
+        /// <summary>
+        /// Funcion que verifica las cartas especiales
+        /// </summary>
+        /// <param name="cartas">recibe la cartas del jugador</param>
+        /// <returns>Devuelve la cartas modificadas</returns>
+        public List<CartaUno> VerificarCartasEspeciales(List<CartaUno> cartas, out ETipoCarta accion)
+        {
+            accion = ETipoCarta.NONE;
+            if (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_DOS || (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_CUATRO))
+            {
+                int fin = (int) this.MostrarCartaMesa().Palo;
+
+                for (int i = 0; i < fin; i++)
+                {
+                    cartas.Add(SiguienteCarta());
+                }
+
+            }
+               
+            accion = this.MostrarCartaMesa().Palo;
+            return cartas;
+        }
     }
 }

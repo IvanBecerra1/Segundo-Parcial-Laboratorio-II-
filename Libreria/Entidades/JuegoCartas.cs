@@ -20,15 +20,15 @@ namespace Libreria.Entidades
         /// <summary>
         /// Lista de las cantidad de cartas puestas en mesa
         /// </summary>
-        private List<T> mesaDeCartas;
+        private Stack<T> mesaDeCartas;
 
-        public List<T> MesaDeCartas { get => mesaDeCartas; set => mesaDeCartas = value; }
+        public Stack<T> MesaDeCartas { get => mesaDeCartas; set => mesaDeCartas = value; }
         public Stack<T> MazoDeCartas { get => mazoDeCartas; set => mazoDeCartas = value; }
 
         public JuegoCartas()
         {
             this.mazoDeCartas = new Stack<T>();
-            this.mesaDeCartas = new List<T>();
+            this.mesaDeCartas = new Stack<T>();
         }
 
     }
