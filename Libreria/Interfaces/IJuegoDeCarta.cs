@@ -51,7 +51,7 @@ namespace Libreria.Interfaces
         public List<T> CartasDisponibles();
 
         /// <summary>
-        /// Agrega las cartas en mesa con los que se va a jugar
+        /// Agrega las cartas en mesa que el jugador selecciono
         /// </summary>
         /// <param name="carta"></param>
         public bool AgregarCartasAlMeson(T carta);
@@ -85,5 +85,10 @@ namespace Libreria.Interfaces
         /// </summary>
         /// <returns>Devolvera la lista modificada</returns>
         public List<T> VerificarCartasEspeciales(List<T> cartas, out ETipoCarta accion);
+
+        /// <summary>
+        /// Pone una carta en mesa
+        /// </summary>
+        public void PonerCartaAlMeson();
     }
 }

@@ -16,7 +16,6 @@ namespace Libreria.Entidades
     /// <typeparam name="T"></typeparam>
     public abstract class Sala 
     {
-        protected int rondas;
         protected List<Jugador> listaJugadores;
 
 
@@ -26,10 +25,9 @@ namespace Libreria.Entidades
         /// </summary>
         protected IJuegoDeCarta<CartaUno> juego;
 
-        public Sala(int rondas, IJuegoDeCarta<CartaUno> juego)
+        public Sala(IJuegoDeCarta<CartaUno> juego)
         {
             this.listaJugadores = new List<Jugador>();
-            this.rondas = rondas;
             this.juego = juego;
         }
 

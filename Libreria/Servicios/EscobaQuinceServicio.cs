@@ -213,5 +213,10 @@ namespace Libreria.Servicios
         {
             throw new NotImplementedException();
         }
+
+        public void PonerCartaAlMeson()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

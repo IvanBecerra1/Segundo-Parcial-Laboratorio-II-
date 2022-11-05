@@ -1,4 +1,5 @@
 ﻿using Libreria.Interfaces;
+using Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace Libreria.Entidades
 {
     public class SalaCartas : Sala
     {
-        public IJuegoDeCarta<Carta> juego { get => base.juego; }
+        public IJuegoDeCarta<CartaUno> juego { get => null; }
 
-        public SalaCartas(int rondas, IJuegoDeCarta<Carta> juegos) : base(rondas, juegos)
+        public SalaCartas(IJuegoDeCarta<CartaUno> juegos) : base(juegos)
         {
           //  this.escobaQuince = escobaQuince;
         }

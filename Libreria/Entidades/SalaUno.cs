@@ -13,7 +13,7 @@ namespace Modelo.Entidades
         public List<Jugador> listaJugador;
         public Jugador turnoJugador;
 
-        public SalaUno(int rondas, IJuegoDeCarta<CartaUno> juego) : base(rondas, juego)
+        public SalaUno(IJuegoDeCarta<CartaUno> juego) : base(juego)
         {
             this.CargarPartida();
         }
@@ -23,6 +23,7 @@ namespace Modelo.Entidades
         {
             this.juego.LlenarMazo();
             this.juego.MezclarMazo();
+            this.juego.PonerCartaAlMeson();
         }
 
         public List<CartaUno> DarCartaJugador()
@@ -30,10 +31,14 @@ namespace Modelo.Entidades
             return this.juego.BarajarCartas();
         }
 
-        public bool tirarCarta()
+        public CartaUno AgarrarCarta()
         {
-
+            return this.juego.SiguienteCarta();
         }
 
+        public bool DepositarCarta(CartaUno carta)
+        {
+            return this.juego.AgregarCartasAlMeson(carta);
+        }
     }
 }

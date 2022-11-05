@@ -13,14 +13,20 @@ using Modelo.Servicios;
 
 namespace ConsoleApp1
 {
+
+    public class test
+    {
+        public int Valor { get; set; }
+    }
     public class Program
     {
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
 
 
+
         static void Main(string[] args)
         {
-
+            
             UnoServicio unoServicio = new UnoServicio();
 
 

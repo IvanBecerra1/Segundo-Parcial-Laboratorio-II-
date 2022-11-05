@@ -44,7 +44,7 @@ namespace Modelo.Servicios
         {
             get => new List<CartaUno>(this.juego.MazoDeCartas);
         }
-        public List<CartaUno> CartasMesa { get => new List<CartaUno>(this.juego.MazoDeCartas); }
+        public List<CartaUno> CartasMesa { get => new List<CartaUno>(this.juego.MesaDeCartas); }
 
         /// <summary>
         /// Funcion que cumple para agregar cartas 
