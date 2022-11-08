@@ -13,10 +13,13 @@ namespace Libreria.Entidades
         private static int idCount;
         private string nombre;
 
+
+
         private List<CartaUno> cartas;
         private List<CartaUno> cartasEnBodega;
         private Estadisticas estadisticas;
 
+        private bool cantarUno;
 
         public Jugador()
         {
@@ -47,6 +50,7 @@ namespace Libreria.Entidades
         public List<CartaUno> Cartas { get => cartas; set => cartas = value; }
         public List<CartaUno> CartasEnBodega { get => cartasEnBodega; set => cartasEnBodega = value; }
         public Estadisticas Estadisticas { get => estadisticas; set => estadisticas = value; }
+        public bool CantarUno { get => cantarUno; set => cantarUno = value; }
 
         public static bool operator ==(Jugador jugadorA, Jugador JugadorB)
         {

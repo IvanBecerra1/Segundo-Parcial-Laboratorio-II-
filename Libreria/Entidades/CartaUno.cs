@@ -12,6 +12,7 @@ namespace Modelo.Entidades
     public class CartaUno : Carta
     {
         private ETipoColor color;
+        private bool accion;
 
         public CartaUno(ETipoCarta tipo, int numero, ETipoColor color)
             : base(tipo, numero)
@@ -24,5 +25,6 @@ namespace Modelo.Entidades
             return base.ToString() + " - Color: " + this.color.ToString();
         }
         public ETipoColor Color { get => color; set => color = value; }
+        public bool Accion { get => accion; set => accion = value; }
     }
 }

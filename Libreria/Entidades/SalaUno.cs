@@ -1,4 +1,5 @@
 ﻿using Libreria.Entidades;
+using Libreria.Enumeraciones;
 using Libreria.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,6 @@ namespace Modelo.Entidades
         {
             this.CargarPartida();
         }
-
 
         public void CargarPartida()
         {
@@ -40,5 +40,33 @@ namespace Modelo.Entidades
         {
             return this.juego.AgregarCartasAlMeson(carta);
         }
+
+        public List<CartaUno> CartaMazo()
+        {
+            return this.juego.CartasMazo;
+        }
+        public CartaUno MostrarCartaMesa()
+        {
+            return this.juego.MostrarCartaMesa();
+        }
+
+        public List<CartaUno> VerificarCartasEspeciales(out ETipoCarta accion)
+        {
+            accion = ETipoCarta.NONE;
+            return this.juego.VerificarCartasEspeciales(out accion);
+        }
+
+        public List<CartaUno> DevolverDosCartas()
+        {
+            List<CartaUno> cartas = new List<CartaUno>();
+
+            for (int i = 0;i < 2; i++)
+            {
+                cartas.Add(this.juego.SiguienteCarta());
+            }
+
+            return cartas;
+        }
+
     }
 }

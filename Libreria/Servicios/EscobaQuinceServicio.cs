@@ -218,5 +218,10 @@ namespace Libreria.Servicios
         {
             throw new NotImplementedException();
         }
+
+        public List<Carta> VerificarCartasEspeciales(out ETipoCarta accion)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using Libreria.Entidades;
 using Libreria.Enumeraciones;
 using Libreria.Servicios;
@@ -23,12 +25,69 @@ namespace ConsoleApp1
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
 
 
-
+        public static bool carta(CartaUno carta, CartaUno  carta2)
+        {
+            return true;
+        }
         static void Main(string[] args)
         {
+
+            VerificarTareas();
+            Console.ReadLine();
+            //  Console.WriteLine( test(0, out tipoDevuelto)  + " tipo: " + tipoDevuelto);
+            #region 
+            /*
+
+           VerificarCarta verificar;
+           verificar = new VerificarCarta(verificarNumeroCarta);
+       //   verificar += verificarNumeroCarta;
+
+
+           CartaUno carta = new CartaUno(Libreria.Enumeraciones.ETipoCarta.NONE, 10, Modelo.Enumeraciones.ETipoColor.VERDE);
+           CartaUno carta2 = new CartaUno(Libreria.Enumeraciones.ETipoCarta.NONE, 12, Modelo.Enumeraciones.ETipoColor.VERDE);
+
+           Console.WriteLine(verificar(carta, carta2));
+
+           Console.ReadLine();
+
+            */
+            #endregion
+
+        }
+        static void VerificarTareas()
+        {
+            var tarea1 = Task.Run(() =>
+            {
+                verificarCarta();
+            });
+
+            Task.WaitAll(tarea1);
             
+            var tarea3 = Task.Run(() =>
+            {
+                CambiarRonda();
+            });
+
+
+        }
+        static void verificarCarta()
+        {
+            Console.WriteLine("Posibilidad de cantar Uno .....");
+            Thread.Sleep(5000);
+        }
+
+        static void CambiarRonda()
+        {
+            Console.WriteLine("Se cambio la ronda al siguiente jugador .....");
+        }
+
+        public static bool test(int i, out string tipo)
+        {
+
             UnoServicio unoServicio = new UnoServicio();
 
+
+            VerificarCarta test = new VerificarCarta(carta);
 
             List<Jugador> listajugadores = new List<Jugador>
             {
@@ -36,7 +95,7 @@ namespace ConsoleApp1
                 new Jugador("pepe"),
             };
 
-            int turno  = 0;
+            int turno = 0;
 
 
             /// iniciar variables:
@@ -71,33 +130,14 @@ namespace ConsoleApp1
                 foreach (var aux in listajugadores)
                 {
 
-                    ETipoCarta tipo = ETipoCarta.NONE;
                     Console.WriteLine("CARTA EN MESA");
-                    Console.WriteLine(unoServicio.MostrarCartaMesa());
-                    unoServicio.VerificarCartasEspeciales(aux.Cartas, out tipo);
-
-                    Console.WriteLine( "Accion: " + tipo.ToString());
-
-                    if (tipo == ETipoCarta.CAMBIAR_COLOR)
-                    {
-                        /// Seleccione el color de carta
-                    }
-
-                    if (tipo == ETipoCarta.INVERTIR_RONDA) { 
-                        // Invertimos la lista
-                        // Terminamos el bucle
-                    }
-
-                    if (tipo == ETipoCarta.SALTEAR_JUGADOR)
-                    {
-                        // Salteamos el bucle con un continue;
-                    }
+               
 
                     Console.WriteLine("----Turno jugador: " + aux.Nombre);
 
                     Console.WriteLine("Carta en mesa: ");
-                    
-                    
+
+
                     Console.WriteLine("1. Tirar carta");
                     Console.WriteLine("2. Recojer carta");
                     Console.WriteLine("3. Pasar turno");
@@ -115,8 +155,8 @@ namespace ConsoleApp1
                             });
 
                             int id = int.Parse(Console.ReadLine());
-                            
-                           // si no se pudo agregar
+
+                            // si no se pudo agregar
                             if (unoServicio.AgregarCartasAlMeson(seleccionarCarta(id, aux.Cartas)) == false)
                             {
                                 /// Podria implementar un bucle pero es solo testeo.
@@ -163,35 +203,11 @@ namespace ConsoleApp1
             } while (++turno != 3);
 
 
-             
+
 
             string tipoDevuelto = "";
 
 
-            Console.WriteLine( test(0, out tipoDevuelto)  + " tipo: " + tipoDevuelto);
-            #region 
-            /*
-
-           VerificarCarta verificar;
-           verificar = new VerificarCarta(verificarNumeroCarta);
-       //   verificar += verificarNumeroCarta;
-
-
-           CartaUno carta = new CartaUno(Libreria.Enumeraciones.ETipoCarta.NONE, 10, Modelo.Enumeraciones.ETipoColor.VERDE);
-           CartaUno carta2 = new CartaUno(Libreria.Enumeraciones.ETipoCarta.NONE, 12, Modelo.Enumeraciones.ETipoColor.VERDE);
-
-           Console.WriteLine(verificar(carta, carta2));
-
-           Console.ReadLine();
-
-            */
-            #endregion
-
-        }
-    
-
-        public static bool test(int i, out string tipo)
-        {
             bool isvalid = false;
             tipo = "";
 

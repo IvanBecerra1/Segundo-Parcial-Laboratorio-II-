@@ -37,6 +37,11 @@ namespace Modelo.Servicios
 
         private bool verificarCarta(CartaUno carta, CartaUno carta2)
         {
+            if (carta2.Palo == ETipoCarta.CAMBIAR_COLOR || carta2.Palo == ETipoCarta.ROBA_CUATRO || carta2.Palo == ETipoCarta.ROBA_DOS)
+            {
+                return true;
+            }
+
             return (carta.Color == carta2.Color) || (carta.NumeroPalo == carta2.NumeroPalo);
         }
 
@@ -195,9 +200,11 @@ namespace Modelo.Servicios
         /// </summary>
         /// <param name="cartas">recibe la cartas del jugador</param>
         /// <returns>Devuelve la cartas modificadas</returns>
-        public List<CartaUno> VerificarCartasEspeciales(List<CartaUno> cartas, out ETipoCarta accion)
+        public List<CartaUno> VerificarCartasEspeciales(out ETipoCarta accion)
         {
             accion = ETipoCarta.NONE;
+            List<CartaUno> cartas = new List<CartaUno>();
+
             if (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_DOS || (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_CUATRO))
             {
                 int fin = (int) this.MostrarCartaMesa().Palo;

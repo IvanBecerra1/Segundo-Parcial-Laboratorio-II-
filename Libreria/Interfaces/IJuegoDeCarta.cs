@@ -84,7 +84,7 @@ namespace Libreria.Interfaces
         /// puesta en mesa es una especial
         /// </summary>
         /// <returns>Devolvera la lista modificada</returns>
-        public List<T> VerificarCartasEspeciales(List<T> cartas, out ETipoCarta accion);
+        public List<T> VerificarCartasEspeciales(out ETipoCarta accion);
 
         /// <summary>
         /// Pone una carta en mesa
