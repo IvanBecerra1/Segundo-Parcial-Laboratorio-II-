@@ -14,6 +14,11 @@ namespace Modelo.Entidades
         private ETipoColor color;
         private bool accion;
 
+        public CartaUno() : base()
+        {
+
+        }
+
         public CartaUno(ETipoCarta tipo, int numero, ETipoColor color)
             : base(tipo, numero)
         {

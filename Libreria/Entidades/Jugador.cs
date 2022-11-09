@@ -13,18 +13,15 @@ namespace Libreria.Entidades
         private static int idCount;
         private string nombre;
 
-
-
         private List<CartaUno> cartas;
-        private List<CartaUno> cartasEnBodega;
         private Estadisticas estadisticas;
 
         private bool cantarUno;
+        private bool estaJugando;
 
         public Jugador()
         {
             this.cartas = new List<CartaUno>();
-            this.cartasEnBodega = new List<CartaUno>();
         }
         public Jugador(string nombre) : this()
         {
@@ -48,9 +45,9 @@ namespace Libreria.Entidades
         public static int IdCount { get => idCount; set => idCount = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public List<CartaUno> Cartas { get => cartas; set => cartas = value; }
-        public List<CartaUno> CartasEnBodega { get => cartasEnBodega; set => cartasEnBodega = value; }
         public Estadisticas Estadisticas { get => estadisticas; set => estadisticas = value; }
         public bool CantarUno { get => cantarUno; set => cantarUno = value; }
+        public bool EstaJugando { get => estaJugando; set => estaJugando = value; }
 
         public static bool operator ==(Jugador jugadorA, Jugador JugadorB)
         {

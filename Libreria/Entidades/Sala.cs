@@ -16,10 +16,7 @@ namespace Libreria.Entidades
     /// <typeparam name="T"></typeparam>
     public abstract class Sala 
     {
-        protected List<Jugador> listaJugadores;
 
-
-        //  private JuegoEscoba juego; // T => EscobaQuince u otro;
         /// <summary>
         /// Ahora La clase sala podra ser cualquier tipo de juego que implemente IJuegos
         /// </summary>
@@ -27,7 +24,6 @@ namespace Libreria.Entidades
 
         public Sala(IJuegoDeCarta<CartaUno> juego)
         {
-            this.listaJugadores = new List<Jugador>();
             this.juego = juego;
         }
 

@@ -13,6 +13,7 @@ using System.Runtime.CompilerServices;
 using Modelo.Entidades;
 using Modelo.Enumeraciones;
 using System.ComponentModel;
+using Modelo.Excepciones;
 
 namespace Modelo.Servicios
 {
@@ -25,9 +26,6 @@ namespace Modelo.Servicios
 
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
         private VerificarCarta verificar;
-
-        private delegate bool VerificarCartaEspeciales(CartaUno carta);
-        private VerificarCartaEspeciales verificarEspeciales;
 
         public UnoServicio()
         {
@@ -58,36 +56,67 @@ namespace Modelo.Servicios
         /// <returns>Devuelve true o false si se pudo agregar la carta</returns>
         public bool AgregarCartasAlMeson(CartaUno carta)
         {
-            if (this.verificar(this.juego.MesaDeCartas.Peek(), carta) == false)
+            try
             {
-                return false;
-            }
 
-            this.juego.MesaDeCartas.Push(carta);
-            return true;
+                if (this.verificar(this.juego.MesaDeCartas.Peek(), carta) == false)
+                {
+                    return false;
+                }
+
+                this.juego.MesaDeCartas.Push(carta);
+                return true;
+            } catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error: Metodo: AgregarCartasAlMeson: {ex.Message}");
+            }
         }
 
+        /// <summary>
+        /// Pone una carta al meson
+        /// </summary>
         public void PonerCartaAlMeson()
         {
-            this.juego.MesaDeCartas.Push(this.SiguienteCarta());
+            try
+            {
+                this.juego.MesaDeCartas.Push(this.SiguienteCarta());
+
+            }
+            catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error, metodo: PonerCartaAlMeson(): {ex.Message}");
+            }
         }
 
+        /// <summary>
+        /// Metodo encargado de añadir cartas para enviar
+        /// al jugador, solo podran ser 7.
+        /// </summary>
+        /// <returns>Lista de cartas para el jugador</returns>
         public List<CartaUno> BarajarCartas()
         {
-            if (!this.juego.MazoDeCartas.Any())
+            try
             {
-                return null;
+                if (!this.juego.MazoDeCartas.Any())
+                {
+                    return null;
+                }
+                List<CartaUno> cartasDevueltas = new List<CartaUno>();
+
+                do
+                {
+                    cartasDevueltas.Add(SiguienteCarta());
+                } while (cartasDevueltas.Count <= 6);
+
+                return cartasDevueltas;
             }
-            List<CartaUno> cartasDevueltas = new List<CartaUno>();
-
-            do
+            catch (Exception ex)
             {
-                cartasDevueltas.Add(SiguienteCarta());
-            } while (cartasDevueltas.Count <= 6);
-
-            return cartasDevueltas;
+                throw new JuegoExcepcion($"Error, metodo: BarajarCartas: {ex}");
+            }
         }
 
+        /// METODO NO UTILIZO
         /// <summary>
         /// Cartas disponibles del jugador. si tiene 0 es el ganador
         /// </summary>
@@ -98,6 +127,8 @@ namespace Modelo.Servicios
         {
             throw new NotImplementedException();
         }
+
+        /// METODO NO UTILIZO.
         /// <summary>
         /// Cambiar de tipo list a carta seleccionada
         /// </summary>
@@ -113,86 +144,136 @@ namespace Modelo.Servicios
           
         }
 
+        /// <summary>
+        /// Llena el mazo de cartas 
+        /// </summary>
+        /// <returns>Devuelve la lista de cartas</returns>
         public List<CartaUno> LlenarMazo()
         {
-            if (this.juego.MazoDeCartas == null)
+            try
             {
-                return null;
-            }
-          
-            // cartas comunes
-            for (int i = 0; i < 9; i++)
-            {
-                if (i == 0)
+                if (this.juego.MazoDeCartas == null)
                 {
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.ROJO));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.VERDE));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AZUL));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AMARILLO));
+                    return null;
                 }
 
-                this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.ROJO));
-                this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.VERDE));
-                this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AZUL));
-                this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AMARILLO));
-            }
-            /*
-
-            ROBA_DOS,
-              ROBA_CUATRO,
-              INVERTIR_RONDA,
-              CAMBIAR_COLOR,
-              SALTEAR_JUGADOR
-           */
-            // cartas especiales
-            for (int i = 0; i <= 3; i++)
-            {
-                if (i <= 1)
+                // cartas comunes
+                for (int i = 0; i < 9; i++)
                 {
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_DOS, i + 1, ETipoColor.ROJO));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.INVERTIR_RONDA, i + 1, ETipoColor.VERDE));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.SALTEAR_JUGADOR, i + 1, ETipoColor.AZUL));
+                    if (i == 0)
+                    {
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.ROJO));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.VERDE));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AZUL));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AMARILLO));
+                    }
+
+                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.ROJO));
+                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.VERDE));
+                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AZUL));
+                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AMARILLO));
+                }
+                // cartas especiales
+                for (int i = 0; i <= 3; i++)
+                {
+                    if (i <= 1)
+                    {
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_DOS, i + 1, ETipoColor.ROJO));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.INVERTIR_RONDA, i + 1, ETipoColor.VERDE));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.SALTEAR_JUGADOR, i + 1, ETipoColor.AZUL));
+                    }
+
+                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.CAMBIAR_COLOR, i + 1, ETipoColor.ROJO));
+                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_CUATRO, i + 1, ETipoColor.VERDE));
                 }
 
-                this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.CAMBIAR_COLOR, i + 1, ETipoColor.ROJO));
-                this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_CUATRO, i + 1, ETipoColor.VERDE));
+
+                return new List<CartaUno>(this.juego.MazoDeCartas);
+            } catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error, metodo: LlenarMazo(): {ex.Message}");
+
             }
-
-
-            return new List<CartaUno>(this.juego.MazoDeCartas);
+           
         }
 
+        /// <summary>
+        /// Mezcla el mazo de cartas 
+        /// </summary>
+        /// <returns>Devuelve la lista de cartas mezcladas.</returns>
         public List<CartaUno> MezclarMazo()
         {
-            var random = new Random();
-            List<CartaUno> auxList = new List<CartaUno>(this.juego.MazoDeCartas);
-            List<CartaUno> test2 = new List<CartaUno>(auxList.OrderBy(item => random.Next()));
+            try
+            {
 
-            this.juego.MazoDeCartas = new Stack<CartaUno>(test2);
-            return this.CartasMazo;
+                var random = new Random();
+                List<CartaUno> auxList = new List<CartaUno>(this.juego.MazoDeCartas);
+                List<CartaUno> test2 = new List<CartaUno>(auxList.OrderBy(item => random.Next()));
+
+                this.juego.MazoDeCartas = new Stack<CartaUno>(test2);
+                return this.CartasMazo;
+            }
+            catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error, metodo: MezclarMazo(): {ex.Message}");
+            }
         }
 
-
+        /// <summary>
+        /// Devuelve la siguiente carta que se encuentra en 
+        /// en la lista de cartas en mazo
+        /// Si no hay cartas para devolver, se vuelcan
+        /// las cartas que se encuentran en Mesa, hacia al mazo nuevamente.
+        /// </summary>
+        /// <returns>Carta de vuelta</returns>
+        /// <exception cref="JuegoExcepcion"></exception>
         public CartaUno SiguienteCarta()
         {
-
-            if (this.juego.MazoDeCartas == null || !this.juego.MazoDeCartas.Any())
+            try
             {
-                return null;
-            }
+                if (this.juego.MazoDeCartas == null)
+                {
+                    return new CartaUno();
+                }
 
+                if (this.juego.MazoDeCartas.Any() == false)
+                {
+                    this.juego.MazoDeCartas = this.juego.MesaDeCartas;
+                    this.juego.MazoDeCartas.Pop();
+
+                    CartaUno aux = this.MostrarCartaMesa();
+                    this.juego.MesaDeCartas.Clear();
+                    this.juego.MesaDeCartas.Push(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error: Metodo: SiguienteCarta: {ex}");
+            }
+            
             return this.juego.MazoDeCartas.Pop();
         }
 
-
+        /// <summary>
+        /// Metodo que muestra cual es la carta en mesa
+        /// </summary>
+        /// <returns>Devuelve la carta que esta en mesa</returns>
+        /// <exception cref="JuegoExcepcion"></exception>
         public CartaUno MostrarCartaMesa()
-        { 
-            if (this.juego.MesaDeCartas.Any() == false)
+        {
+            try
             {
-                return null;
-            }
+                if (this.juego.MesaDeCartas.Any() == false)
+                {
+                    return null;
+                }
 
-            return this.juego.MesaDeCartas.Peek();
+                return this.juego.MesaDeCartas.Peek();
+            }
+            catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error, Metodo: MostrarCartaMesa: {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -202,22 +283,28 @@ namespace Modelo.Servicios
         /// <returns>Devuelve la cartas modificadas</returns>
         public List<CartaUno> VerificarCartasEspeciales(out ETipoCarta accion)
         {
-            accion = ETipoCarta.NONE;
-            List<CartaUno> cartas = new List<CartaUno>();
-
-            if (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_DOS || (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_CUATRO))
+            try
             {
-                int fin = (int) this.MostrarCartaMesa().Palo;
+                accion = ETipoCarta.NONE;
+                List<CartaUno> cartas = new List<CartaUno>();
 
-                for (int i = 0; i < fin; i++)
+                if (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_DOS || (this.MostrarCartaMesa().Palo == ETipoCarta.ROBA_CUATRO))
                 {
-                    cartas.Add(SiguienteCarta());
+                    int fin = (int)this.MostrarCartaMesa().Palo;
+
+                    for (int i = 0; i <= fin; i++)
+                    {
+                        cartas.Add(SiguienteCarta());
+                    }
                 }
 
+                accion = this.MostrarCartaMesa().Palo;
+                return cartas;
             }
-               
-            accion = this.MostrarCartaMesa().Palo;
-            return cartas;
+            catch (Exception ex)
+            {
+                throw new JuegoExcepcion($"Error, metodo: VerificarCartasEspeciales: {ex.Message}");
+            }
         }
     }
 }

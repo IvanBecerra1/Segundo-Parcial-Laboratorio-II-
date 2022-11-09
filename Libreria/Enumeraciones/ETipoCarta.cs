@@ -13,12 +13,6 @@ namespace Libreria.Enumeraciones
         INVERTIR_RONDA,
         ROBA_CUATRO,
         CAMBIAR_COLOR,
-        SALTEAR_JUGADOR,
-
-
-        ESPADA,
-        BASTON,
-        ORO,
-        COPA
+        SALTEAR_JUGADOR
     }
 }

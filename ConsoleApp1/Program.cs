@@ -9,7 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Libreria.Entidades;
 using Libreria.Enumeraciones;
-using Libreria.Servicios;
 using Modelo.Entidades;
 using Modelo.Servicios;
 
@@ -24,14 +23,13 @@ namespace ConsoleApp1
     {
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
 
-
+ 
         public static bool carta(CartaUno carta, CartaUno  carta2)
         {
             return true;
         }
         static void Main(string[] args)
         {
-
             VerificarTareas();
             Console.ReadLine();
             //  Console.WriteLine( test(0, out tipoDevuelto)  + " tipo: " + tipoDevuelto);

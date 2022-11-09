@@ -50,13 +50,13 @@ namespace Modelo.Repositorio
                 {
                     conexion.Open();
                     comando.Connection = conexion;
-                    comando.CommandText = @"INSERT INTO" + TABLA + @"(puntos_juego, partidas_ganadas, partidas_perdidas, fecha_juego)
-                                            VALUES (@puntosJuego, @partidasGanadas, @partidasPerdidas, @fechaJuego)";
+                    comando.CommandText = @"INSERT INTO" + TABLA + @"(puntos_juego, partidas_ganadas, partidas_perdidas, partidas_abandonadas)
+                                            VALUES (@puntosJuego, @partidasGanadas, @partidasPerdidas, @partidasAbandonadas)";
 
                     comando.Parameters.AddWithValue("@puntosJuego", entidad.Puntos);
                     comando.Parameters.AddWithValue("@partidasGanadas", entidad.PartidasGanadas);
                     comando.Parameters.AddWithValue("@partidasPerdidas", entidad.PartidasPerdidas);
-                    comando.Parameters.AddWithValue("@fechaJuego", entidad.Fecha);
+                    comando.Parameters.AddWithValue("@partidasAbandonadas", entidad.PartidasAbandonadas);
                     comando.ExecuteNonQuery();
                 }
                 seGuardo = true;
@@ -91,7 +91,7 @@ namespace Modelo.Repositorio
                         estadisticas.Puntos = lector.GetInt32(1);
                         estadisticas.PartidasGanadas = lector.GetInt32(2);
                         estadisticas.PartidasPerdidas = lector.GetInt32(3);
-                        estadisticas.Fecha = lector.GetDateTime(4);
+                        estadisticas.PartidasAbandonadas = lector.GetInt32(4);
                         lisatEstadisticas.Add(estadisticas);
                     }
                 }
@@ -123,7 +123,7 @@ namespace Modelo.Repositorio
                             estadisticas.Puntos = lector.GetInt32(1);
                             estadisticas.PartidasGanadas = lector.GetInt32(2);
                             estadisticas.PartidasPerdidas = lector.GetInt32(3);
-                            estadisticas.Fecha = lector.GetDateTime(4);
+                            estadisticas.PartidasAbandonadas = lector.GetInt32(4);
                         }
                     }
                 }
@@ -146,18 +146,18 @@ namespace Modelo.Repositorio
                 {
                     conexion.Open();
                     comando.Connection = conexion;
-                    comando.CommandText = @"UPDATE " + TABLA +  @" 
+                    comando.CommandText = @"UPDATE " + TABLA + @" 
                                             SET puntos = @puntosJuego,
                                                 partidas_ganadas = @partidasGanadas,
                                                 partidas_perdidas = @partidasPerdidas,                                                                      
-                                                fecha = @fechaJuego
+                                                partidas_abandonadas = @partidasAbandonadas
                                             WHERE id_estadisticas = @id";
 
                     comando.Parameters.AddWithValue("@id", entidad.Id);
                     comando.Parameters.AddWithValue("@puntosJuego", entidad.Puntos);
                     comando.Parameters.AddWithValue("@partidasGanadas", entidad.PartidasGanadas);
                     comando.Parameters.AddWithValue("@partidasPerdidas", entidad.PartidasPerdidas);
-                    comando.Parameters.AddWithValue("@fechaJuego", entidad.Fecha);
+                    comando.Parameters.AddWithValue("@partidasAbandonadas", entidad.PartidasAbandonadas);
                     comando.ExecuteNonQuery();
                 }
                 seModifico = true;
