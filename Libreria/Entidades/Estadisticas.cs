@@ -34,5 +34,24 @@ namespace Libreria.Entidades
         public int PartidasPerdidas { get => partidasPerdidas; set => partidasPerdidas = value; }
         public int Id { get => id; set => id = value; }
         public int PartidasAbandonadas { get => partidasAbandonadas; set => partidasAbandonadas = value; }
+
+        public override string ToString()
+        {
+            return $"P.G: {this.partidasGanadas} - P.P: {this.partidasPerdidas} - P.A: {this.partidasAbandonadas} - P.T: {this.PartidasTotales}";
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Estadisticas)
+            {
+                return this.id == (((Estadisticas)obj).id);
+            }
+            return false;
+        }
     }
 }

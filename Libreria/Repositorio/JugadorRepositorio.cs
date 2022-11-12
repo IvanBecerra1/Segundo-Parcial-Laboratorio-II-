@@ -13,7 +13,11 @@ using Modelo.Entidades;
 using System.Threading;
 
 namespace Modelo.Repositorio
-{
+{  
+    /// <summary>
+   /// Clase con una unica especialidad
+   /// Conectarse, crear o/y manejar consultas a nuestra db
+   /// </summary>
     public class JugadorRepositorio : Repositorio, IRepositorio<Jugador>
     {
         private static string TABLA = " Jugadores ";

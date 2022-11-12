@@ -30,35 +30,3 @@ C:\Users\Ivan\source\repos\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes
 C:\Users\Ivan\source\repos\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Ivan\source\repos\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Ivan\source\repos\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.FormEstadisticas.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\WinFormsApptTestPP2.exe
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\WinFormsApptTestPP2.deps.json
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\WinFormsApptTestPP2.runtimeconfig.json
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\WinFormsApptTestPP2.runtimeconfig.dev.json
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\WinFormsApptTestPP2.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\WinFormsApptTestPP2.pdb
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\Modelo.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\bin\Debug\net5.0-windows\Modelo.pdb
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.csproj.AssemblyReference.cache
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.AgregarJugador.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.FormColoresCarta.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.FormEstadisticas.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.FormInicio.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.FormJuego.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.FormPartidaTerminada.resources
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.csproj.GenerateResource.cache
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.AssemblyInfoInputs.cache
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.AssemblyInfo.cs
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.csproj.CoreCompileInputs.cache
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.csproj.CopyComplete
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\refint\WinFormsApptTestPP2.dll
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.pdb
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\WinFormsApptTestPP2.genruntimeconfig.cache
-C:\Users\Ivan\Desktop\parcial II laboratorio\WinFormsApptTestPP2\obj\Debug\net5.0-windows\ref\WinFormsApptTestPP2.dll

@@ -10,6 +10,9 @@ using Modelo.Entidades;
 
 namespace Modelo.Serializacion
 {
+    /// <summary>
+    /// Serializacion de las cartas Uno
+    /// </summary>
     public static class SerializacionJSON
     {
 
@@ -19,7 +22,7 @@ namespace Modelo.Serializacion
 
         static SerializacionJSON()
         {
-            if (!SerializacionJSON.ExisteDirectorio())
+            if (!Directory.Exists($"..\\CartasJSON"))
             {
                 Directory.CreateDirectory("..\\CartasJSON");
             }
@@ -27,10 +30,9 @@ namespace Modelo.Serializacion
             SerializacionJSON.path = $"..\\CartasJSON\\cartas_json.json";
         }
 
-
         public static bool ExisteDirectorio()
         {
-            return Directory.Exists($"..\\CartasJSON");
+            return File.Exists(SerializacionJSON.path);
         }
 
         public static bool SerializarJSON(Stack<CartaUno> cartas)

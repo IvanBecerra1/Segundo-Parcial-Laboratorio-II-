@@ -19,7 +19,6 @@ namespace Libreria.Entidades
         private Estadisticas estadisticas;
 
         private bool cantarUno;
-        private bool estaJugando;
 
         private EEstadoJugador estado;
 
@@ -47,13 +46,16 @@ namespace Libreria.Entidades
             }
             return base.Equals(obj);
         }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         public int Id { get => id; set => id = value; }
         public static int IdCount { get => idCount; set => idCount = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public List<CartaUno> Cartas { get => cartas; set => cartas = value; }
         public Estadisticas Estadisticas { get => estadisticas; set => estadisticas = value; }
         public bool CantarUno { get => cantarUno; set => cantarUno = value; }
-        public bool EstaJugando { get => estaJugando; set => estaJugando = value; }
         public string Alias { get => alias; set => alias = value; }
         public EEstadoJugador Estado { get => estado; set => estado = value; }
 

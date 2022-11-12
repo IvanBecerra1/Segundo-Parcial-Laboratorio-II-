@@ -9,8 +9,7 @@ namespace Modelo.Entidades
     static class StringExtension
     {
         /// <summary>
-        /// Funcionalidad que permite convertir un string a enum indicando a 
-        /// que tipo convertir.
+        /// Funcionalidad que permite convertir un string a enum
         /// </summary>
         /// <typeparam name="T">Tipo de dato</typeparam>
         /// <param name="param">parametro</param>

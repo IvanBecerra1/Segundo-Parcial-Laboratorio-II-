@@ -116,7 +116,7 @@
             this.rowNombre_table2,
             this.rowAlias_table2,
             this.rowTop_15});
-            this.dataGridView2.Location = new System.Drawing.Point(49, 365);
+            this.dataGridView2.Location = new System.Drawing.Point(49, 319);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(443, 150);
@@ -150,7 +150,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(49, 334);
+            this.label1.Location = new System.Drawing.Point(49, 288);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 28);
             this.label1.TabIndex = 2;
@@ -159,7 +159,7 @@
             // comboBoxPartidas
             // 
             this.comboBoxPartidas.FormattingEnabled = true;
-            this.comboBoxPartidas.Location = new System.Drawing.Point(49, 68);
+            this.comboBoxPartidas.Location = new System.Drawing.Point(50, 102);
             this.comboBoxPartidas.Name = "comboBoxPartidas";
             this.comboBoxPartidas.Size = new System.Drawing.Size(643, 23);
             this.comboBoxPartidas.TabIndex = 3;
@@ -169,7 +169,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(49, 37);
+            this.label2.Location = new System.Drawing.Point(50, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 28);
             this.label2.TabIndex = 4;
@@ -177,7 +177,7 @@
             // 
             // btnSalirEstadistica
             // 
-            this.btnSalirEstadistica.Location = new System.Drawing.Point(325, 549);
+            this.btnSalirEstadistica.Location = new System.Drawing.Point(51, 23);
             this.btnSalirEstadistica.Name = "btnSalirEstadistica";
             this.btnSalirEstadistica.Size = new System.Drawing.Size(167, 33);
             this.btnSalirEstadistica.TabIndex = 5;
@@ -190,13 +190,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(840, 608);
+            this.ClientSize = new System.Drawing.Size(838, 496);
             this.Controls.Add(this.btnSalirEstadistica);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxPartidas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridViewJugadores);
+            this.MaximumSize = new System.Drawing.Size(854, 535);
+            this.MinimumSize = new System.Drawing.Size(854, 535);
             this.Name = "FormEstadisticas";
             this.Text = "FormEstadisticas";
             this.Load += new System.EventHandler(this.FormEstadisticas_Load);

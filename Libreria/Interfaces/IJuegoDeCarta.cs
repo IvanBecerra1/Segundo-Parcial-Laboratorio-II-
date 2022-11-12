@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 namespace Libreria.Interfaces
 {
     /// <summary>
-    /// Aplico todos los metodos porque si quiero agregar
-    /// otro juego, ejemplo el Uno, puedo utilizar estos Metodos para ese tipo de juego
-    /// 
+    /// Interfaz que tendra las funcionalidades
+    /// comunes en la especialidad de juego de cartas
     /// </summary>
     public interface IJuegoDeCarta<T>
     {
@@ -27,7 +26,7 @@ namespace Libreria.Interfaces
         public List<T> LlenarMazo();
 
         /// <summary>
-        /// Barajar cartas es darle cartas a cada jugador.
+        /// Barajar cartas, es darle cartas a cada jugador.
         /// </summary>
         /// <param name="listaCartas"></param>
         /// <returns></returns>
@@ -59,9 +58,9 @@ namespace Libreria.Interfaces
 
 
         /// <summary>
-        /// Devuelve la carta que este en Mesa.
+        /// Muestra la carta que este en Mesa.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Carta que este</returns>
         public T MostrarCartaMesa();
 
         /// <summary>
@@ -72,7 +71,7 @@ namespace Libreria.Interfaces
         public List<T> VerificarCartasEspeciales(out ETipoCarta accion);
 
         /// <summary>
-        /// Pone una carta en mesa
+        /// Pone una carta del mezo al meson
         /// </summary>
         public void PonerCartaAlMeson();
     }

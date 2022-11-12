@@ -11,7 +11,6 @@ namespace Libreria.Entidades
     /// <summary>
     /// Se implementara los distintos juegos que se desarrollen.
     /// Abstracto para no alterar el comportamiento de la clase
-    /// Principio solid: Abierto / Cerrado
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public abstract class Sala 

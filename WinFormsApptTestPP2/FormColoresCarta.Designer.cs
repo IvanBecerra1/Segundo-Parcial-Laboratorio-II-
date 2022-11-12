@@ -71,7 +71,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormColoresCarta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormColoresCarta";

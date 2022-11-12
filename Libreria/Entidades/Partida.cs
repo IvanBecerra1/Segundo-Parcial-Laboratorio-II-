@@ -33,14 +33,21 @@ namespace Modelo.Entidades
             {
                 this.rondas = value;
             }
-              
-                
-                }
+        }
         public int Id { get => id; set => id = value; }
 
         public override string ToString()
         {
             return $"{this.id} - {this.fecha.ToString("dd/MM/yy")} - Ganador: {this.ganador.Nombre} ({this.ganador.Alias}) - Rondas jugadas: {this.Rondas}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            return (obj is Partida) ? (this.id == (((Partida)obj).id)) : false;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

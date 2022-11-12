@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace Modelo.Repositorio
 {
+    /// <summary>
+    /// Clase con una unica especialidad
+    /// Conectarse, crear o/y manejar consultas a nuestra db
+    /// </summary>
     public class EstadisticasRepositorio : Repositorio, IRepositorio<Estadisticas>
     {
         private static string TABLA = " Estadisticas ";

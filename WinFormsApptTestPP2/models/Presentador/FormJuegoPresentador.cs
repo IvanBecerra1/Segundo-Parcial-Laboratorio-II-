@@ -557,8 +557,6 @@ namespace WinFormsApptTestPP2.models.Presentador
         {
             foreach (var aux in this.presentador.ListaJugadores)
             {
-                aux.EstaJugando = false;
-
                 aux.Estado = EEstadoJugador.DISPONIBLE;
 
                 repositorioJugador.editar(aux);
@@ -573,8 +571,6 @@ namespace WinFormsApptTestPP2.models.Presentador
             foreach (var aux in this.presentador.ListaJugadores)
             {
                 aux.Estado = EEstadoJugador.DISPONIBLE;
-
-                aux.EstaJugando = false;
 
                 if (aux == ganador)
                 {

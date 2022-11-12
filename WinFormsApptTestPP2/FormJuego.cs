@@ -326,8 +326,6 @@ namespace WinFormsApptTestPP2
 
             foreach (var aux in this.ListaJugadores)
             {
-                aux.EstaJugando = false;
-
                 aux.Estado = EEstadoJugador.DISPONIBLE;
                 repositorioJugador.editar(aux);
             }

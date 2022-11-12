@@ -23,7 +23,6 @@ namespace WinFormsApptTestPP2
         private List<Jugador> listaJugadorEnSala;
 
         public delegate void EventoSala();
-
         public event EventoSala CatchEventMenu;
 
 
@@ -105,17 +104,21 @@ namespace WinFormsApptTestPP2
             botonCerrar = true;
             if (int.Parse(this.textBoxCantidadRondas.Text) <= 3)
             {
-                // mensage box
+                Task taskNotifiacion = Task.Run(() =>
+                {
+                    MessageBox.Show($"Ingrese una ronda mayor a 3", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                });
                 return;
             }
 
-            if (this.ListaJugadorEnSala.Any() == false || this.ListaJugadorEnSala.Count <= 1)
+            if (this.ListaJugadorEnSala.Any() == false || this.ListaJugadorEnSala.Count <= 1 || this.ListaJugadorEnSala.Count > 3)
             {
-                // mensage box
+                Task tarea = Task.Run(() =>
+                {
+                    MessageBox.Show($"Ingrese almenos: 2-4 Jugadores", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                });
                 return;
             }
-            // Acciones que me permitar abrir
-            //this.DialogResult = DialogResult.OK;
 
             this.CatchEventMenu.Invoke();
         }
@@ -164,7 +167,6 @@ namespace WinFormsApptTestPP2
 
                 jugadorSeleccionado.Estado = EEstadoJugador.JUGANDO;
                 this.jugadorRepositorio.editar(jugadorSeleccionado);
-               // this.estadisticaRepositorio.editar(jugadorSeleccionado.Estadisticas);
 
                 this.listBoxJugadoresSala.Items.Add(jugadorSeleccionado);
                 ActualizarListBoxJugadores();
@@ -233,5 +235,16 @@ namespace WinFormsApptTestPP2
             }
         }
 
+        private void textBoxCantidadRondas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
     }
 }

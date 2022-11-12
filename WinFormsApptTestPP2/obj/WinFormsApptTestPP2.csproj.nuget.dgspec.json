@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj": {}
+    "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj": {}
   },
   "projects": {
     "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\Libreria\\Modelo.csproj": {
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj": {
+    "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
+        "projectUniqueName": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
         "projectName": "WinFormsApptTestPP2",
-        "projectPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
+        "projectPath": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
         "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\obj\\",
+        "outputPath": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",

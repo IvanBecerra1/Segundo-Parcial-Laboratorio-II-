@@ -45,7 +45,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxCantidadRondas = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +54,7 @@
             this.listBoxJugadoresRegistrados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxJugadoresRegistrados.FormattingEnabled = true;
             this.listBoxJugadoresRegistrados.ItemHeight = 15;
-            this.listBoxJugadoresRegistrados.Location = new System.Drawing.Point(28, 139);
+            this.listBoxJugadoresRegistrados.Location = new System.Drawing.Point(38, 139);
             this.listBoxJugadoresRegistrados.Name = "listBoxJugadoresRegistrados";
             this.listBoxJugadoresRegistrados.Size = new System.Drawing.Size(267, 169);
             this.listBoxJugadoresRegistrados.TabIndex = 0;
@@ -90,7 +89,7 @@
             // btnTerminar
             // 
             this.btnTerminar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTerminar.Location = new System.Drawing.Point(28, 401);
+            this.btnTerminar.Location = new System.Drawing.Point(38, 401);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(267, 46);
             this.btnTerminar.TabIndex = 4;
@@ -106,7 +105,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Location = new System.Drawing.Point(28, 12);
+            this.groupBox1.Location = new System.Drawing.Point(38, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(357, 97);
             this.groupBox1.TabIndex = 5;
@@ -133,7 +132,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 119);
+            this.label2.Location = new System.Drawing.Point(42, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 15);
             this.label2.TabIndex = 6;
@@ -144,7 +143,7 @@
             this.listBoxJugadoresSala.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxJugadoresSala.FormattingEnabled = true;
             this.listBoxJugadoresSala.ItemHeight = 15;
-            this.listBoxJugadoresSala.Location = new System.Drawing.Point(330, 139);
+            this.listBoxJugadoresSala.Location = new System.Drawing.Point(340, 142);
             this.listBoxJugadoresSala.Name = "listBoxJugadoresSala";
             this.listBoxJugadoresSala.Size = new System.Drawing.Size(272, 169);
             this.listBoxJugadoresSala.TabIndex = 7;
@@ -153,7 +152,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(330, 121);
+            this.label3.Location = new System.Drawing.Point(340, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 15);
             this.label3.TabIndex = 8;
@@ -162,9 +161,9 @@
             // btnAgregarJugadorSala
             // 
             this.btnAgregarJugadorSala.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarJugadorSala.Location = new System.Drawing.Point(163, 323);
+            this.btnAgregarJugadorSala.Location = new System.Drawing.Point(38, 323);
             this.btnAgregarJugadorSala.Name = "btnAgregarJugadorSala";
-            this.btnAgregarJugadorSala.Size = new System.Drawing.Size(132, 42);
+            this.btnAgregarJugadorSala.Size = new System.Drawing.Size(267, 42);
             this.btnAgregarJugadorSala.TabIndex = 9;
             this.btnAgregarJugadorSala.Text = "Agregar jugador";
             this.btnAgregarJugadorSala.UseVisualStyleBackColor = true;
@@ -173,7 +172,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(330, 317);
+            this.button2.Location = new System.Drawing.Point(340, 317);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(272, 48);
             this.button2.TabIndex = 10;
@@ -184,7 +183,7 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(330, 401);
+            this.button3.Location = new System.Drawing.Point(340, 401);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(267, 46);
             this.button3.TabIndex = 11;
@@ -194,6 +193,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBoxCantidadRondas);
             this.groupBox2.Location = new System.Drawing.Point(402, 12);
@@ -201,7 +201,7 @@
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Configuracion";
             // 
             // label4
             // 
@@ -218,25 +218,14 @@
             this.textBoxCantidadRondas.Name = "textBoxCantidadRondas";
             this.textBoxCantidadRondas.Size = new System.Drawing.Size(80, 23);
             this.textBoxCantidadRondas.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(28, 323);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 42);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Ver estadistica";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.textBoxCantidadRondas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCantidadRondas_KeyPress);
             // 
             // AgregarJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(628, 459);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(648, 458);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -247,6 +236,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.listBoxJugadoresRegistrados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AgregarJugador";
             this.Text = "AgregarJugador";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AgregarJugador_FormClosing);
@@ -276,7 +266,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxCantidadRondas;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxAlias;
         private System.Windows.Forms.CheckBox checkBox1;

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Modelo.Entidades
 {
+    /// <summary>
+    /// Sala solo para el juego UNO
+    /// </summary>
     public class SalaUno : Sala
     {
         public SalaUno(IJuegoDeCarta<CartaUno> juego) : base(juego)

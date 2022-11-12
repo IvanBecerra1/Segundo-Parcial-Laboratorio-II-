@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace Modelo.Repositorio
 {
+    /// <summary>
+    /// Manejo de la entidad Partidas y la tabla Partidas_Jugadores (relacion n a n)
+    /// </summary>
     public class PartidaRepositorio : Repositorio, IRepositorio<Partida>
     {
         EstadisticasRepositorio estadisticasRepositorio = new EstadisticasRepositorio();

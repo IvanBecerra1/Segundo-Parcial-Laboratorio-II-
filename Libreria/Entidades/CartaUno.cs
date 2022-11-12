@@ -29,6 +29,11 @@ namespace Modelo.Entidades
         {
             return base.ToString() + " - Color: " + this.color.ToString();
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         public ETipoColor Color { get => color; set => color = value; }
         public bool Accion { get => accion; set => accion = value; }
     }

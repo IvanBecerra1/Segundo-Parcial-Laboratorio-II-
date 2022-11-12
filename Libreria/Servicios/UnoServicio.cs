@@ -19,21 +19,38 @@ using Modelo.Serializacion;
 namespace Modelo.Servicios
 {
     /// <summary>
-    /// Funciones del juego el Uno
+    /// Clase Servicio, solo tendra la Responsabilidad Unica (Single Responsibility Principle)
+    /// de crear e implementar la logica/mecanica que se necesita para el juego Uno
     /// </summary>
     public class UnoServicio : IJuegoDeCarta<CartaUno>
     {
-        public JuegoCartas<CartaUno> juego = new JuegoCartas<CartaUno>();
-
+        private JuegoCartas<CartaUno> juego;
         private delegate bool VerificarCarta(CartaUno carta, CartaUno carta2);
         private VerificarCarta verificar;
 
         public UnoServicio()
         {
             this.verificar = new VerificarCarta(verificarCarta);
+            this.juego = new JuegoCartas<CartaUno>();
 
         }
+        #region Propiedades
+        public List<CartaUno> CartasMazo
+        {
+            get => new List<CartaUno>(this.juego.MazoDeCartas);
+        }
+        public List<CartaUno> CartasMesa { get => new List<CartaUno>(this.juego.MesaDeCartas); }
 
+        #endregion
+
+        /// <summary>
+        /// Delegado que estara encargado de verificar
+        /// y chequeara si la carta que se esta tirando 
+        /// cumple con la regla del juego
+        /// </summary>
+        /// <param name="carta">Carta mesa</param>
+        /// <param name="carta2">Carta enviada</param>
+        /// <returns>Verdadero o falso si cumple con la regla del juego</returns>
         private bool verificarCarta(CartaUno carta, CartaUno carta2)
         {
             if (carta2.Palo == ETipoCarta.CAMBIAR_COLOR || carta2.Palo == ETipoCarta.ROBA_CUATRO || carta2.Palo == ETipoCarta.ROBA_DOS)
@@ -44,12 +61,6 @@ namespace Modelo.Servicios
             return (carta.Color == carta2.Color) || (carta.NumeroPalo == carta2.NumeroPalo);
         }
 
-        public List<CartaUno> CartasMazo
-        {
-            get => new List<CartaUno>(this.juego.MazoDeCartas);
-        }
-        public List<CartaUno> CartasMesa { get => new List<CartaUno>(this.juego.MesaDeCartas); }
-
         /// <summary>
         /// Funcion que cumple para agregar cartas 
         /// </summary>
@@ -59,7 +70,6 @@ namespace Modelo.Servicios
         {
             try
             {
-
                 if (this.verificar(this.juego.MesaDeCartas.Peek(), carta) == false)
                 {
                     return false;
@@ -119,6 +129,8 @@ namespace Modelo.Servicios
 
         /// <summary>
         /// Llena el mazo de cartas 
+        /// Si existe el JSON de cartas cargadas, se deserializara
+        /// Si no, se vuelve a crear el JSon
         /// </summary>
         /// <returns>Devuelve la lista de cartas</returns>
         public List<CartaUno> LlenarMazo()
@@ -187,10 +199,12 @@ namespace Modelo.Servicios
             {
 
                 var random = new Random();
-                List<CartaUno> auxList = new List<CartaUno>(this.juego.MazoDeCartas);
-                List<CartaUno> test2 = new List<CartaUno>(auxList.OrderBy(item => random.Next()));
+               // List<CartaUno> auxList = new List<CartaUno>(this.juego.MazoDeCartas);
+                Stack<CartaUno> test2 = new Stack<CartaUno>(this.juego.MazoDeCartas.OrderBy(item => random.Next()));
 
-                this.juego.MazoDeCartas = new Stack<CartaUno>(test2);
+              //  this.juego.MazoDeCartas.OrderBy(item => random.Next());
+
+                this.juego.MazoDeCartas = test2;//new Stack<CartaUno>(test2);
                 return this.CartasMazo;
             }
             catch (Exception ex)
@@ -245,7 +259,7 @@ namespace Modelo.Servicios
             {
                 if (this.juego.MesaDeCartas.Any() == false)
                 {
-                    return null;
+                    throw new JuegoExcepcion("Se produjo un error, no se encuentran cartas en mesa!!");
                 }
 
                 return this.juego.MesaDeCartas.Peek();
@@ -259,8 +273,7 @@ namespace Modelo.Servicios
         /// <summary>
         /// Funcion que verifica las cartas especiales
         /// </summary>
-        /// <param name="cartas">recibe la cartas del jugador</param>
-        /// <returns>Devuelve la cartas modificadas</returns>
+        /// <returns>Devuelve la cartas que se asignara al jugador</returns>
         public List<CartaUno> VerificarCartasEspeciales(out ETipoCarta accion)
         {
             try

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xhwY5S/NupDGJLZIVj1IWlp3ONb6r3yjnW1UhuLPDmi8DoV7B6Icaf+PBS2vDLiEqGvxmE2GbjM2dpO5luLKqg==",
+  "dgSpecHash": "wx4ZL+1Ghg2Wqczftt+RrvbR+S2RmLVfmja0T5Wd72Vgo7DYNnVsjjukZ1C1tT+jwLJWxdN6AI+q/UkAf+EXiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
+  "projectFilePath": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

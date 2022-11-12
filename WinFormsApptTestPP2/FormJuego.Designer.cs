@@ -57,9 +57,9 @@
             this.listBoxCartaJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxCartaJugador.FormattingEnabled = true;
             this.listBoxCartaJugador.ItemHeight = 15;
-            this.listBoxCartaJugador.Location = new System.Drawing.Point(31, 402);
+            this.listBoxCartaJugador.Location = new System.Drawing.Point(39, 361);
             this.listBoxCartaJugador.Name = "listBoxCartaJugador";
-            this.listBoxCartaJugador.Size = new System.Drawing.Size(761, 94);
+            this.listBoxCartaJugador.Size = new System.Drawing.Size(477, 94);
             this.listBoxCartaJugador.TabIndex = 0;
             // 
             // listBoxCartaMesa
@@ -67,7 +67,7 @@
             this.listBoxCartaMesa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxCartaMesa.FormattingEnabled = true;
             this.listBoxCartaMesa.ItemHeight = 15;
-            this.listBoxCartaMesa.Location = new System.Drawing.Point(219, 168);
+            this.listBoxCartaMesa.Location = new System.Drawing.Point(316, 176);
             this.listBoxCartaMesa.Name = "listBoxCartaMesa";
             this.listBoxCartaMesa.Size = new System.Drawing.Size(399, 94);
             this.listBoxCartaMesa.TabIndex = 1;
@@ -75,31 +75,31 @@
             // btnTirarCarta
             // 
             this.btnTirarCarta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTirarCarta.Location = new System.Drawing.Point(207, 553);
+            this.btnTirarCarta.Location = new System.Drawing.Point(285, 469);
             this.btnTirarCarta.Name = "btnTirarCarta";
-            this.btnTirarCarta.Size = new System.Drawing.Size(198, 43);
+            this.btnTirarCarta.Size = new System.Drawing.Size(127, 43);
             this.btnTirarCarta.TabIndex = 2;
-            this.btnTirarCarta.Text = "btnTirarCarta";
+            this.btnTirarCarta.Text = "Tirar carta";
             this.btnTirarCarta.UseVisualStyleBackColor = true;
             // 
             // btnPasarTurno
             // 
             this.btnPasarTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPasarTurno.Location = new System.Drawing.Point(422, 553);
+            this.btnPasarTurno.Location = new System.Drawing.Point(418, 469);
             this.btnPasarTurno.Name = "btnPasarTurno";
-            this.btnPasarTurno.Size = new System.Drawing.Size(184, 43);
+            this.btnPasarTurno.Size = new System.Drawing.Size(132, 43);
             this.btnPasarTurno.TabIndex = 3;
-            this.btnPasarTurno.Text = "btnPasarTurno";
+            this.btnPasarTurno.Text = "pasar turno";
             this.btnPasarTurno.UseVisualStyleBackColor = true;
             // 
             // btnAgarrarCarta
             // 
             this.btnAgarrarCarta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgarrarCarta.Location = new System.Drawing.Point(623, 553);
+            this.btnAgarrarCarta.Location = new System.Drawing.Point(556, 469);
             this.btnAgarrarCarta.Name = "btnAgarrarCarta";
-            this.btnAgarrarCarta.Size = new System.Drawing.Size(184, 43);
+            this.btnAgarrarCarta.Size = new System.Drawing.Size(132, 43);
             this.btnAgarrarCarta.TabIndex = 4;
-            this.btnAgarrarCarta.Text = "btnAgarrarCartaMazo";
+            this.btnAgarrarCarta.Text = "agarrar carta";
             this.btnAgarrarCarta.UseVisualStyleBackColor = true;
             // 
             // listBoxCartaMazo
@@ -107,15 +107,16 @@
             this.listBoxCartaMazo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxCartaMazo.FormattingEnabled = true;
             this.listBoxCartaMazo.ItemHeight = 15;
-            this.listBoxCartaMazo.Location = new System.Drawing.Point(865, 502);
+            this.listBoxCartaMazo.Location = new System.Drawing.Point(807, 476);
             this.listBoxCartaMazo.Name = "listBoxCartaMazo";
-            this.listBoxCartaMazo.Size = new System.Drawing.Size(331, 94);
+            this.listBoxCartaMazo.Size = new System.Drawing.Size(408, 49);
             this.listBoxCartaMazo.TabIndex = 5;
+            this.listBoxCartaMazo.Visible = false;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(128, 301);
+            this.textBox1.Location = new System.Drawing.Point(147, 89);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 6;
@@ -124,7 +125,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 309);
+            this.label1.Location = new System.Drawing.Point(31, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 7;
@@ -134,7 +135,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 338);
+            this.label2.Location = new System.Drawing.Point(31, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 9;
@@ -143,7 +144,7 @@
             // textBoxRondas
             // 
             this.textBoxRondas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxRondas.Location = new System.Drawing.Point(128, 330);
+            this.textBoxRondas.Location = new System.Drawing.Point(147, 118);
             this.textBoxRondas.Name = "textBoxRondas";
             this.textBoxRondas.Size = new System.Drawing.Size(100, 23);
             this.textBoxRondas.TabIndex = 8;
@@ -153,17 +154,17 @@
             this.listBoxJugadores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxJugadores.FormattingEnabled = true;
             this.listBoxJugadores.ItemHeight = 15;
-            this.listBoxJugadores.Location = new System.Drawing.Point(865, 282);
+            this.listBoxJugadores.Location = new System.Drawing.Point(807, 266);
             this.listBoxJugadores.Name = "listBoxJugadores";
-            this.listBoxJugadores.Size = new System.Drawing.Size(331, 139);
+            this.listBoxJugadores.Size = new System.Drawing.Size(408, 139);
             this.listBoxJugadores.TabIndex = 10;
             // 
             // btnCantarUno
             // 
             this.btnCantarUno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCantarUno.Location = new System.Drawing.Point(31, 553);
+            this.btnCantarUno.Location = new System.Drawing.Point(161, 467);
             this.btnCantarUno.Name = "btnCantarUno";
-            this.btnCantarUno.Size = new System.Drawing.Size(170, 43);
+            this.btnCantarUno.Size = new System.Drawing.Size(118, 43);
             this.btnCantarUno.TabIndex = 11;
             this.btnCantarUno.Text = "Cantar uno";
             this.btnCantarUno.UseVisualStyleBackColor = true;
@@ -171,19 +172,19 @@
             // btnAbandonar
             // 
             this.btnAbandonar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAbandonar.Location = new System.Drawing.Point(12, 26);
+            this.btnAbandonar.Location = new System.Drawing.Point(31, 21);
             this.btnAbandonar.Name = "btnAbandonar";
             this.btnAbandonar.Size = new System.Drawing.Size(170, 43);
             this.btnAbandonar.TabIndex = 12;
-            this.btnAbandonar.Text = "Abandonar partida";
+            this.btnAbandonar.Text = "Cancelar Partida";
             this.btnAbandonar.UseVisualStyleBackColor = true;
             // 
             // btnVerEstadisticaJugador
             // 
             this.btnVerEstadisticaJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnVerEstadisticaJugador.Location = new System.Drawing.Point(865, 427);
+            this.btnVerEstadisticaJugador.Location = new System.Drawing.Point(807, 412);
             this.btnVerEstadisticaJugador.Name = "btnVerEstadisticaJugador";
-            this.btnVerEstadisticaJugador.Size = new System.Drawing.Size(175, 43);
+            this.btnVerEstadisticaJugador.Size = new System.Drawing.Size(408, 43);
             this.btnVerEstadisticaJugador.TabIndex = 13;
             this.btnVerEstadisticaJugador.Text = "Ver estadisticas del jugador";
             this.btnVerEstadisticaJugador.UseVisualStyleBackColor = true;
@@ -193,7 +194,7 @@
             this.lblTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTurno.AutoSize = true;
             this.lblTurno.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTurno.Location = new System.Drawing.Point(219, 88);
+            this.lblTurno.Location = new System.Drawing.Point(316, 79);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(243, 37);
             this.lblTurno.TabIndex = 14;
@@ -203,7 +204,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.listBoxArchivos);
-            this.groupBox1.Location = new System.Drawing.Point(788, 26);
+            this.groupBox1.Location = new System.Drawing.Point(807, 35);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(423, 185);
             this.groupBox1.TabIndex = 15;
@@ -222,10 +223,11 @@
             // 
             // lblNotificacion
             // 
+            this.lblNotificacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNotificacion.AutoSize = true;
             this.lblNotificacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNotificacion.ForeColor = System.Drawing.Color.Red;
-            this.lblNotificacion.Location = new System.Drawing.Point(31, 368);
+            this.lblNotificacion.Location = new System.Drawing.Point(50, 310);
             this.lblNotificacion.Name = "lblNotificacion";
             this.lblNotificacion.Size = new System.Drawing.Size(105, 21);
             this.lblNotificacion.TabIndex = 0;
@@ -236,7 +238,8 @@
             this.lblNombreJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombreJugador.AutoSize = true;
             this.lblNombreJugador.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombreJugador.Location = new System.Drawing.Point(468, 88);
+            this.lblNombreJugador.ForeColor = System.Drawing.Color.Fuchsia;
+            this.lblNombreJugador.Location = new System.Drawing.Point(550, 79);
             this.lblNombreJugador.Name = "lblNombreJugador";
             this.lblNombreJugador.Size = new System.Drawing.Size(243, 37);
             this.lblNombreJugador.TabIndex = 17;
@@ -245,11 +248,11 @@
             // btnMostrarCarta
             // 
             this.btnMostrarCarta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMostrarCarta.Location = new System.Drawing.Point(31, 502);
+            this.btnMostrarCarta.Location = new System.Drawing.Point(39, 465);
             this.btnMostrarCarta.Name = "btnMostrarCarta";
-            this.btnMostrarCarta.Size = new System.Drawing.Size(169, 45);
+            this.btnMostrarCarta.Size = new System.Drawing.Size(116, 45);
             this.btnMostrarCarta.TabIndex = 18;
-            this.btnMostrarCarta.Text = "MostrarCartas";
+            this.btnMostrarCarta.Text = "Mostrar cartas";
             this.btnMostrarCarta.UseVisualStyleBackColor = true;
             // 
             // lblMostrarMensajeCartas
@@ -258,11 +261,11 @@
             this.lblMostrarMensajeCartas.AutoSize = true;
             this.lblMostrarMensajeCartas.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMostrarMensajeCartas.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblMostrarMensajeCartas.Location = new System.Drawing.Point(31, 442);
+            this.lblMostrarMensajeCartas.Location = new System.Drawing.Point(50, 412);
             this.lblMostrarMensajeCartas.Name = "lblMostrarMensajeCartas";
-            this.lblMostrarMensajeCartas.Size = new System.Drawing.Size(423, 28);
+            this.lblMostrarMensajeCartas.Size = new System.Drawing.Size(139, 28);
             this.lblMostrarMensajeCartas.TabIndex = 19;
-            this.lblMostrarMensajeCartas.Text = "Cartas ocultas, espere a que se cambie de turno";
+            this.lblMostrarMensajeCartas.Text = "Cartas ocultas!";
             this.lblMostrarMensajeCartas.Visible = false;
             // 
             // FormJuego
@@ -270,7 +273,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1223, 635);
+            this.ClientSize = new System.Drawing.Size(1263, 524);
             this.Controls.Add(this.lblNotificacion);
             this.Controls.Add(this.btnMostrarCarta);
             this.Controls.Add(this.lblNombreJugador);
@@ -291,6 +294,7 @@
             this.Controls.Add(this.listBoxCartaMesa);
             this.Controls.Add(this.listBoxCartaJugador);
             this.Controls.Add(this.lblMostrarMensajeCartas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormJuego";
             this.Text = "FormJuego";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormJuego_FormClosing_1);
