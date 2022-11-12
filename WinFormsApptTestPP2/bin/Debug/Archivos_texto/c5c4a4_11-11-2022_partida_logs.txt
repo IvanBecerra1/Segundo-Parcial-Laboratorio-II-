@@ -1,0 +1,11 @@
+asda - tiene la mano*******
+asda - Cambio el color de la carta: ROJO
+asda - Tiro su carta: ROJO * CAMBIAR_COLOR  * 1 
+aaaa - tiene la mano*******
+aaaa - se llevo dos cartas por no cantar Uno.
+aaaa - Recogio carta del mazo
+aaaa - Paso su turno
+asda - tiene la mano*******
+asda - Recogio carta del mazo
+asda - Paso su turno
+aaaa - tiene la mano*******

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.Repositorio
 {
+
     public abstract class Repositorio
     {
         protected static string CONEXION;
@@ -16,7 +17,7 @@ namespace Modelo.Repositorio
 
         static Repositorio()
         {
-            Repositorio.CONEXION = @"Server=localhost\SQLEXPRESS;Database=db_juegos_carta;Trusted_Connection=True;";
+            Repositorio.CONEXION = @"Data Source=localhost;Initial Catalog=db_parcial_ll;Integrated Security=True"; ;
 
         }
     }

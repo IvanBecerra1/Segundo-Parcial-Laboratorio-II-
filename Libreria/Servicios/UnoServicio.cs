@@ -14,6 +14,7 @@ using Modelo.Entidades;
 using Modelo.Enumeraciones;
 using System.ComponentModel;
 using Modelo.Excepciones;
+using Modelo.Serializacion;
 
 namespace Modelo.Servicios
 {
@@ -116,34 +117,6 @@ namespace Modelo.Servicios
             }
         }
 
-        /// METODO NO UTILIZO
-        /// <summary>
-        /// Cartas disponibles del jugador. si tiene 0 es el ganador
-        /// </summary>
-        /// <param name="listaCartas"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public List<CartaUno> CartasDisponibles()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// METODO NO UTILIZO.
-        /// <summary>
-        /// Cambiar de tipo list a carta seleccionada
-        /// </summary>
-        /// <param name="cartasSeleccionada"></param>
-        /// <returns></returns>
-        public bool CompararCartas(List<CartaUno> cartasSeleccionada)
-        {
-
-            Stack<CartaUno> cartasStack = new Stack <CartaUno> (this.juego.MesaDeCartas);
-            CartaUno cartaMesonUltima = cartasStack.Peek();
-
-            return verificar(cartaMesonUltima, cartasSeleccionada[0]);
-          
-        }
-
         /// <summary>
         /// Llena el mazo de cartas 
         /// </summary>
@@ -157,36 +130,43 @@ namespace Modelo.Servicios
                     return null;
                 }
 
-                // cartas comunes
-                for (int i = 0; i < 9; i++)
+                if (SerializacionJSON.ExisteDirectorio())
                 {
-                    if (i == 0)
-                    {
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.ROJO));
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.VERDE));
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AZUL));
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AMARILLO));
-                    }
-
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.ROJO));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.VERDE));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AZUL));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AMARILLO));
+                    this.juego.MazoDeCartas = SerializacionJSON.DeserializarJSON();
                 }
-                // cartas especiales
-                for (int i = 0; i <= 3; i++)
+                else
                 {
-                    if (i <= 1)
+                    // cartas comunes
+                    for (int i = 0; i < 9; i++)
                     {
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_DOS, i + 1, ETipoColor.ROJO));
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.INVERTIR_RONDA, i + 1, ETipoColor.VERDE));
-                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.SALTEAR_JUGADOR, i + 1, ETipoColor.AZUL));
+                        if (i == 0)
+                        {
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.ROJO));
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.VERDE));
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AZUL));
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i, ETipoColor.AMARILLO));
+                        }
+
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.ROJO));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.VERDE));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AZUL));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.NONE, i + 1, ETipoColor.AMARILLO));
                     }
+                    // cartas especiales
+                    for (int i = 0; i <= 3; i++)
+                    {
+                        if (i <= 1)
+                        {
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_DOS, i + 1, ETipoColor.ROJO));
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.INVERTIR_RONDA, i + 1, ETipoColor.VERDE));
+                            this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.SALTEAR_JUGADOR, i + 1, ETipoColor.AZUL));
+                        }
 
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.CAMBIAR_COLOR, i + 1, ETipoColor.ROJO));
-                    this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_CUATRO, i + 1, ETipoColor.VERDE));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.CAMBIAR_COLOR, i + 1, ETipoColor.ROJO));
+                        this.juego.MazoDeCartas.Push(new CartaUno(ETipoCarta.ROBA_CUATRO, i + 1, ETipoColor.VERDE));
+                    }
+                    SerializacionJSON.SerializarJSON(this.juego.MazoDeCartas);
                 }
-
 
                 return new List<CartaUno>(this.juego.MazoDeCartas);
             } catch (Exception ex)

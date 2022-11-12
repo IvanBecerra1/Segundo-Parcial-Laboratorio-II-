@@ -44,25 +44,10 @@ namespace Libreria.Interfaces
         public T SiguienteCarta();
 
         /// <summary>
-        /// Muestra las cartas disponibles en la Mesa.
-        /// </summary>
-        /// <param name="listaCartas"></param>
-        /// <returns></returns>
-        public List<T> CartasDisponibles();
-
-        /// <summary>
         /// Agrega las cartas en mesa que el jugador selecciono
         /// </summary>
         /// <param name="carta"></param>
         public bool AgregarCartasAlMeson(T carta);
-
-        /// <summary>
-        /// Metodo que servira para comparar las cartas
-        /// dependiendo al juego que se lo aplique
-        /// </summary>
-        /// <param name="cartasSeleccionada"></param>
-        /// <returns>Devuelve true si la regla del juego lo permite o falso si no</returns>
-        public bool CompararCartas(List<T> cartasSeleccionada);
 
         /// <summary>
         /// Metodo que servira para mezclar las cartas que

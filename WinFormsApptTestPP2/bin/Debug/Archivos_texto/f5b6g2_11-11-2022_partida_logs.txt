@@ -1,0 +1,7 @@
+pepe - tiene la mano*******
+pepe - Tiro su carta: ROJO * NONE  * 8 
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: ROJO * NONE  * 2 
+pepe - tiene la mano*******
+pepe - Tiro su carta: ROJO * NONE  * 7 
+aaaa - tiene la mano*******

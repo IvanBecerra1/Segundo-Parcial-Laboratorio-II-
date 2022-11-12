@@ -1,0 +1,25 @@
+pepe - tiene la mano*******
+pepe - Recogio carta del mazo
+pepe - Paso su turno
+asda - tiene la mano*******
+asda - Tiro su carta: AMARILLO * NONE  * 6 
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: AMARILLO * NONE  * 5 
+pepe - tiene la mano*******
+pepe - Tiro su carta: VERDE * ROBA_CUATRO  * 1 
+asda - tiene la mano*******
+asda - Se llevo puesto un ROBA_CUATRO
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: VERDE * NONE  * 1 
+pepe - tiene la mano*******
+pepe - Tiro su carta: VERDE * NONE  * 9 
+asda - tiene la mano*******
+asda - Recogio carta del mazo
+asda - Paso su turno
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: VERDE * ROBA_CUATRO  * 2 
+pepe - tiene la mano*******
+pepe - Se llevo puesto un ROBA_CUATRO
+asda - tiene la mano*******
+asda - Tiro su carta: VERDE * NONE  * 4 
+aaaa - tiene la mano*******

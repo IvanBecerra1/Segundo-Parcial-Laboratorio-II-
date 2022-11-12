@@ -1,0 +1,16 @@
+pepe - tiene la mano*******
+pepe - Recogio carta del mazo
+pepe - Paso su turno
+aaaa - tiene la mano*******
+aaaa - Recogio carta del mazo
+aaaa - Paso su turno
+pepe - tiene la mano*******
+pepe - Recogio carta del mazo
+pepe - Paso su turno
+aaaa - tiene la mano*******
+aaaa - Recogio carta del mazo
+aaaa - Paso su turno
+pepe - tiene la mano*******
+pepe - Cambio el color de la carta: ROJO
+pepe - Tiro su carta: ROJO * CAMBIAR_COLOR  * 1 
+aaaa - tiene la mano*******

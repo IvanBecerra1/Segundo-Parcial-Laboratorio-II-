@@ -1,0 +1,5 @@
+pepe - tiene la mano*******
+pepe - Cambio el color de la carta: ROJO
+pepe - Tiro su carta: ROJO * CAMBIAR_COLOR  * 2 
+asda - tiene la mano*******
+asda - se llevo dos cartas por no cantar Uno.

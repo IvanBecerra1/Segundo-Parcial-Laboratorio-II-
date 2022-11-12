@@ -1,0 +1,8 @@
+asda - tiene la mano*******
+asda - Recogio carta del mazo
+asda - Tiro su carta: VERDE * NONE  * 5 
+aaaa - tiene la mano*******
+aaaa - Recogio carta del mazo
+aaaa - Cambio el color de la carta: AMARILLO
+aaaa - Tiro su carta: AMARILLO * CAMBIAR_COLOR  * 2 
+asda - tiene la mano*******

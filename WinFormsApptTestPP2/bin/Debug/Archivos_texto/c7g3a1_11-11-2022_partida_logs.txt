@@ -1,0 +1,10 @@
+asda - tiene la mano*******
+asda - Recogio carta del mazo
+asda - Tiro su carta: AZUL * NONE  * 2 
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: AZUL * NONE  * 2 
+asda - tiene la mano*******
+asda - Tiro su carta: ROJO * ROBA_DOS  * 1 
+aaaa - tiene la mano*******
+aaaa - Se llevo puesto un ROBA_DOS
+asda - tiene la mano*******

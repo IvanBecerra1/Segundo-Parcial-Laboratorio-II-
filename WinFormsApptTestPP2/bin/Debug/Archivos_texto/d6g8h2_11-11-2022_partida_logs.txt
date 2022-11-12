@@ -1,0 +1,10 @@
+pepe - tiene la mano*******
+pepe - Tiro su carta: VERDE * NONE  * 7 
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: VERDE * NONE  * 1 
+pepe - tiene la mano*******
+pepe - Recogio carta del mazo
+pepe - Tiro su carta: VERDE * ROBA_CUATRO  * 4 
+aaaa - tiene la mano*******
+aaaa - Se llevo puesto un ROBA_CUATRO
+pepe - tiene la mano*******

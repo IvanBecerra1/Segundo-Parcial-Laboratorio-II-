@@ -1,0 +1,18 @@
+asda - tiene la mano*******
+asda - Se llevo puesto un ROBA_CUATRO
+aaaa - tiene la mano*******
+aaaa - Recogio carta del mazo
+aaaa - Cambio el color de la carta: AZUL
+aaaa - Tiro su carta: AZUL - CAMBIAR_COLOR  - 2 
+asda - tiene la mano*******
+asda - Tiro su carta: AZUL - NONE  - 2 
+aaaa - tiene la mano*******
+aaaa - Recogio carta del mazo
+aaaa - Tiro su carta: AZUL - SALTEAR_JUGADOR  - 1 
+asda - tiene la mano*******
+asda - Fue salteado
+aaaa - tiene la mano*******
+aaaa - Recogio carta del mazo
+aaaa - Cambio el color de la carta: ROJO
+aaaa - Tiro su carta: ROJO - CAMBIAR_COLOR  - 1 
+asda - tiene la mano*******

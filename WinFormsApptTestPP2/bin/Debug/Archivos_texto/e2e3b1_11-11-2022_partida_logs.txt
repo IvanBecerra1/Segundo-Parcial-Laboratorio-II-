@@ -1,0 +1,8 @@
+pepe - tiene la mano*******
+pepe - Tiro su carta: ROJO * NONE  * 9 
+aaaa - tiene la mano*******
+aaaa - Tiro su carta: ROJO * NONE  * 5 
+pepe - tiene la mano*******
+pepe - Cambio el color de la carta: ROJO
+pepe - Tiro su carta: ROJO * CAMBIAR_COLOR  * 2 
+aaaa - tiene la mano*******

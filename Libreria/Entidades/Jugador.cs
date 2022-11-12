@@ -1,4 +1,5 @@
 ﻿using Modelo.Entidades;
+using Modelo.Enumeraciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Libreria.Entidades
         private int id;
         private static int idCount;
         private string nombre;
+        private string alias;
 
         private List<CartaUno> cartas;
         private Estadisticas estadisticas;
@@ -19,9 +21,13 @@ namespace Libreria.Entidades
         private bool cantarUno;
         private bool estaJugando;
 
+        private EEstadoJugador estado;
+
         public Jugador()
         {
             this.cartas = new List<CartaUno>();
+            this.estadisticas = new Estadisticas();
+            this.estado = EEstadoJugador.DISPONIBLE;
         }
         public Jugador(string nombre) : this()
         {
@@ -30,7 +36,7 @@ namespace Libreria.Entidades
 
         public override string ToString()
         {
-            return $"Jugador: {this.nombre}";
+            return $"Jugador: {this.nombre} - {this.alias} - Estado: {this.estado.ToString()}";
         }
 
         public override bool Equals(object obj)
@@ -48,6 +54,8 @@ namespace Libreria.Entidades
         public Estadisticas Estadisticas { get => estadisticas; set => estadisticas = value; }
         public bool CantarUno { get => cantarUno; set => cantarUno = value; }
         public bool EstaJugando { get => estaJugando; set => estaJugando = value; }
+        public string Alias { get => alias; set => alias = value; }
+        public EEstadoJugador Estado { get => estado; set => estado = value; }
 
         public static bool operator ==(Jugador jugadorA, Jugador JugadorB)
         {

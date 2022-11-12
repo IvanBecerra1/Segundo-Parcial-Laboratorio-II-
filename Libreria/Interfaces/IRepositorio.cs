@@ -18,7 +18,7 @@ namespace Modelo.Interfaces
 
         public bool editar(T entidad);
 
-        public T buscarPorId(int id);
+        public T buscarPor(string dato);
 
         public List<T> obtenerTodo();
 

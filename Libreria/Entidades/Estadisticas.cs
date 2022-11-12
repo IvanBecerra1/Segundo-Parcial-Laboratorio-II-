@@ -11,25 +11,25 @@ namespace Libreria.Entidades
     {
         private int id;
         private static int idCount;
-        private int puntos;
+        private int partidasTotales;
         private int partidasGanadas;
         private int partidasPerdidas;
         private int partidasAbandonadas;
 
         public Estadisticas()
         {
-            this.id = Estadisticas.idCount++;
+           // this.id = Estadisticas.idCount++;
         }
 
         public Estadisticas( int puntos, int partidasGanadas, int partidasPerdidas, int partidasAbandonadas) : this()
         {
-            this.Puntos = puntos;
+            this.partidasTotales = puntos;
             this.PartidasGanadas = partidasGanadas;
             this.PartidasPerdidas = partidasPerdidas;
             this.partidasGanadas = partidasAbandonadas;
         }
 
-        public int Puntos { get => puntos; set => puntos = value; }
+        public int PartidasTotales { get => partidasTotales; set => partidasTotales = value; }
         public int PartidasGanadas { get => partidasGanadas; set => partidasGanadas = value; }
         public int PartidasPerdidas { get => partidasPerdidas; set => partidasPerdidas = value; }
         public int Id { get => id; set => id = value; }

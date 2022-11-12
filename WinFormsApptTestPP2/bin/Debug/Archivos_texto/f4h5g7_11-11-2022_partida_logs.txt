@@ -1,0 +1,10 @@
+pepe - tiene la mano*******
+pepe - Se llevo puesto un ROBA_CUATRO
+aaaa - tiene la mano*******
+aaaa - Cambio el color de la carta: ROJO
+aaaa - Tiro su carta: ROJO * CAMBIAR_COLOR  * 2 
+pepe - tiene la mano*******
+pepe - se llevo dos cartas por no cantar Uno.
+pepe - Recogio carta del mazo
+pepe - Paso su turno
+aaaa - tiene la mano*******
