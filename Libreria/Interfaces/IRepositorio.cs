@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Modelo.Interfaces
 {
     /// <summary>
-    /// Interfaz dedicada al CRUD 
+    /// Interfaz dedicada al C.R.U.D
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
