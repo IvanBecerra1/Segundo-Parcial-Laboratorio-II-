@@ -17,7 +17,7 @@ using WinFormsApptTestPP2.models.Interfaz;
 
 namespace WinFormsApptTestPP2
 {
-    public partial class FormJuego : Form, IJuegoPresentador
+    public partial class FormJuego : Form, IJuego
     {
 
         private Jugador turnoJugador;
@@ -305,10 +305,6 @@ namespace WinFormsApptTestPP2
 
         }
 
-        private void FormJuego_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
         private void FormJuego_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             if (this.terminoRonda == true)

@@ -59,7 +59,7 @@
             this.listBoxCartaJugador.ItemHeight = 15;
             this.listBoxCartaJugador.Location = new System.Drawing.Point(39, 361);
             this.listBoxCartaJugador.Name = "listBoxCartaJugador";
-            this.listBoxCartaJugador.Size = new System.Drawing.Size(477, 94);
+            this.listBoxCartaJugador.Size = new System.Drawing.Size(649, 94);
             this.listBoxCartaJugador.TabIndex = 0;
             // 
             // listBoxCartaMesa
@@ -67,7 +67,7 @@
             this.listBoxCartaMesa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxCartaMesa.FormattingEnabled = true;
             this.listBoxCartaMesa.ItemHeight = 15;
-            this.listBoxCartaMesa.Location = new System.Drawing.Point(316, 176);
+            this.listBoxCartaMesa.Location = new System.Drawing.Point(196, 192);
             this.listBoxCartaMesa.Name = "listBoxCartaMesa";
             this.listBoxCartaMesa.Size = new System.Drawing.Size(399, 94);
             this.listBoxCartaMesa.TabIndex = 1;
@@ -116,7 +116,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(147, 89);
+            this.textBox1.Location = new System.Drawing.Point(352, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 6;
@@ -125,7 +125,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 97);
+            this.label1.Location = new System.Drawing.Point(236, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 7;
@@ -135,7 +135,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 126);
+            this.label2.Location = new System.Drawing.Point(458, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 9;
@@ -144,7 +144,7 @@
             // textBoxRondas
             // 
             this.textBoxRondas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxRondas.Location = new System.Drawing.Point(147, 118);
+            this.textBoxRondas.Location = new System.Drawing.Point(521, 22);
             this.textBoxRondas.Name = "textBoxRondas";
             this.textBoxRondas.Size = new System.Drawing.Size(100, 23);
             this.textBoxRondas.TabIndex = 8;
@@ -194,7 +194,7 @@
             this.lblTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTurno.AutoSize = true;
             this.lblTurno.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTurno.Location = new System.Drawing.Point(316, 79);
+            this.lblTurno.Location = new System.Drawing.Point(169, 109);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(243, 37);
             this.lblTurno.TabIndex = 14;
@@ -209,7 +209,7 @@
             this.groupBox1.Size = new System.Drawing.Size(423, 185);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Notificaciones";
+            this.groupBox1.Text = "Logs";
             // 
             // listBoxArchivos
             // 
@@ -227,7 +227,7 @@
             this.lblNotificacion.AutoSize = true;
             this.lblNotificacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNotificacion.ForeColor = System.Drawing.Color.Red;
-            this.lblNotificacion.Location = new System.Drawing.Point(50, 310);
+            this.lblNotificacion.Location = new System.Drawing.Point(39, 319);
             this.lblNotificacion.Name = "lblNotificacion";
             this.lblNotificacion.Size = new System.Drawing.Size(105, 21);
             this.lblNotificacion.TabIndex = 0;
@@ -239,7 +239,7 @@
             this.lblNombreJugador.AutoSize = true;
             this.lblNombreJugador.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNombreJugador.ForeColor = System.Drawing.Color.Fuchsia;
-            this.lblNombreJugador.Location = new System.Drawing.Point(550, 79);
+            this.lblNombreJugador.Location = new System.Drawing.Point(403, 109);
             this.lblNombreJugador.Name = "lblNombreJugador";
             this.lblNombreJugador.Size = new System.Drawing.Size(243, 37);
             this.lblNombreJugador.TabIndex = 17;

@@ -43,7 +43,6 @@
             this.btnIniciar.TabIndex = 0;
             this.btnIniciar.Text = "Crear sala";
             this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // button1
             // 
@@ -54,7 +53,6 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Estadisticas de partidas";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAdministrador
             // 

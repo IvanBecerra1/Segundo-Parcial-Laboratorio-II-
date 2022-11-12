@@ -31,7 +31,7 @@ namespace WinFormsApptTestPP2.models.Presentador
 
 
         private SalaUno salaCarta;
-        private IJuegoPresentador presentador;
+        private IJuego presentador;
 
         private BindingSource cartasJugadorBindingSource;
 
@@ -39,7 +39,7 @@ namespace WinFormsApptTestPP2.models.Presentador
         private EstadisticasRepositorio repositorioEstadistica;
 
 
-        public FormJuegoPresentador(IJuegoPresentador presentador)
+        public FormJuegoPresentador(IJuego presentador)
         {
             this.salaCarta = new SalaUno(new UnoServicio());
             this.cartasJugadorBindingSource = new BindingSource();
@@ -226,7 +226,7 @@ namespace WinFormsApptTestPP2.models.Presentador
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void funcionTirarCarta(object sender, EventArgs e)
+        private void funcionTirarCarta(object? sender, EventArgs e)
         {
             if (this.tirarCarta == true)
             {

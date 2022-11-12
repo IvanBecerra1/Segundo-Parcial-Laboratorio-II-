@@ -84,7 +84,6 @@
             this.btnAgregar.TabStop = false;
             this.btnAgregar.Text = "Registrar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnTerminar
             // 
@@ -95,7 +94,6 @@
             this.btnTerminar.TabIndex = 4;
             this.btnTerminar.Text = "Iniciar partida";
             this.btnTerminar.UseVisualStyleBackColor = true;
-            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
             // groupBox1
             // 
@@ -167,7 +165,6 @@
             this.btnAgregarJugadorSala.TabIndex = 9;
             this.btnAgregarJugadorSala.Text = "Agregar jugador";
             this.btnAgregarJugadorSala.UseVisualStyleBackColor = true;
-            this.btnAgregarJugadorSala.Click += new System.EventHandler(this.btnAgregarJugadorSala_Click);
             // 
             // button2
             // 
@@ -178,7 +175,6 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Quitar jugador";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -189,7 +185,6 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox2
             // 

@@ -1,0 +1,10 @@
+ivan - tiene la mano*******
+ivan - Cambio el color de la carta: ROJO
+ivan - Cambio el color de la carta: ROJO
+ivan - Tiro su carta: ROJO * CAMBIAR_COLOR  * 4 
+ivan - tiene la mano*******
+ivan - Recogio carta del mazo
+ivan - Paso su turno
+ivan - tiene la mano*******
+ivan - Tiro su carta: ROJO * NONE  * 1 
+ivan - tiene la mano*******

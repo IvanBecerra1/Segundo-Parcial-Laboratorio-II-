@@ -5,51 +5,40 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApptTestPP2.models;
+using WinFormsApptTestPP2.models.Interfaz;
 using WinFormsApptTestPP2.models.Presentador;
 
 namespace WinFormsApptTestPP2
 {
-    public partial class FormInicio : Form
+    public partial class FormInicio : Form, IInicio
     {
-        public List<Jugador> listaJugador = new List<Jugador>();
-
-        public delegate void EventoSala();
-        public event EventoSala CatchEventMenu;
-
-        public AgregarJugador formJugador;
         public FormInicio()
         {
             InitializeComponent();
-            this.CatchEventMenu += AbrirMenuSala;
+
+            //Asociar Eventos directo con delegados
+            this.btnIniciar.Click += delegate
+            {
+                this.EventoMostrarAgregarJugador?.Invoke(this, EventArgs.Empty);
+            };
+
+            //Asociacion click Estadistica
+            this.button1.Click += delegate
+            {
+                this.EventoMostrarEstadistica?.Invoke(this, EventArgs.Empty);
+            };
         }
 
-        private void btnIniciar_Click(object sender, EventArgs e)
-        {
-            this.formJugador = new AgregarJugador();
-            this.formJugador.CatchEventMenu += AbrirMenuSala;
-            this.formJugador.Show();
-        }
-
-        public void AbrirMenuSala()
-        {
-            FormJuego form = new FormJuego(formJugador.ListaJugadorEnSala);
-
-            form.Rondas = formJugador.CantidadRonda;
-            formJugador.Close();
-
-            new FormJuegoPresentador(form);
-            form.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormEstadisticas form = new FormEstadisticas();
-            form.Show();
-        }
+        /// <summary>
+        /// Eventos
+        /// </summary>
+        public event EventHandler EventoMostrarAgregarJugador;
+        public event EventHandler EventoMostrarEstadistica;
     }
 }

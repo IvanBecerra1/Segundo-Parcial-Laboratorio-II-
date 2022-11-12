@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApptTestPP2.models.Interfaz;
+using WinFormsApptTestPP2.models.Presentador;
 
 namespace WinFormsApptTestPP2
 {
@@ -28,12 +30,29 @@ namespace WinFormsApptTestPP2
                 repositorio.editar(aux);
             }
 
+            /*
+             
+             
+            IterfazTest iterfazTest = new Form1();
+
+            new Form1Presentador(iterfazTest);
+
+            Application.Run((Form1)iterfazTest);
+             */
 
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormInicio());
+
+
+
+            IInicio inicioPresentacion = new FormInicio();
+            new InicioPresentacion(inicioPresentacion);
+
+            Application.Run( (FormInicio)inicioPresentacion );
+
+            // Application.Run(new FormInicio());
         }
     }
 }
