@@ -8,6 +8,7 @@ namespace Modelo.Interfaces
 {
     /// <summary>
     /// Interfaz dedicada al CRUD 
+    /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public interface IRepositorio<T>
