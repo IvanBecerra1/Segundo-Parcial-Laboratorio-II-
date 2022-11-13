@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Modelo.DTO
 {
+    /// <summary>
+    /// DTO para Jugador Top
+    /// 
+    /// </summary>
     public class JugadorTopDTO
     {
         private int id;

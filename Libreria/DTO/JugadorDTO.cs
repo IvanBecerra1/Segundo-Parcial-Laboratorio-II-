@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace Modelo.DTO
 {
+    /// <summary>
+    /// Clase DTO: Data Access Object
+    /// Para hacer la transeferencia de datos hacia la 
+    /// interfaz grafica. Mas puntualmente en el Data grid del formulario
+    /// 
+    /// Con el DTO, solo especifico los datos que requiero
+    /// asi evito obtner datos innecesarios
+    /// </summary>
     public class JugadorDTO
     {
         private int id;

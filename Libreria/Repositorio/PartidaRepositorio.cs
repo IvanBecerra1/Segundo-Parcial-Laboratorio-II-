@@ -26,11 +26,7 @@ namespace Modelo.Repositorio
         public Partida buscarPor(string dato)
         {
 
-            //    List<Partida> listaPartidas = new List<Partida>();
-
             int id = int.TryParse(dato, out _) ? Convert.ToInt32(dato) : 0;
-            //     string fecha = dato;
-
             Partida partida = new Partida();
             try
             {
@@ -165,6 +161,7 @@ namespace Modelo.Repositorio
                     comando.Parameters.AddWithValue("@ganador", entidad.Ganador.Id);
 
                     comando.ExecuteNonQuery();
+                    guardarJugadores(entidad.Jugadores);
                 }
                 seGuardo = true;
             }
