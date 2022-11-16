@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace WinFormsApptTestPP2.models.Interfaz
         public event EventHandler EventoIniciarPartida;
         public event EventHandler EventoQuitarJugador;
         public event EventHandler EventoAgregarJugador;
+        public event EventHandler EventAcciones;
 
         public string TextNombre
         {

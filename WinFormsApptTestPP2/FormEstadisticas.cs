@@ -20,12 +20,11 @@ namespace WinFormsApptTestPP2
     {
         private static FormEstadisticas formInstancia;
         public event EventHandler EventoClickComboBox;
-
         public FormEstadisticas()
         {
             InitializeComponent();
 
-            this.comboBoxPartidas.SelectedIndexChanged += delegate
+            this.dataGridPartida.CellClick += delegate
             {
                 this.EventoClickComboBox?.Invoke(this, EventArgs.Empty);
             };
@@ -36,13 +35,17 @@ namespace WinFormsApptTestPP2
             };
         }
 
+        /// <summary>
+        /// Enlaze de control con BindingSource
+        /// </summary>
+        /// <param name="jugadorBindingSource"></param>
         public void EnlazarJugadorBindigSource(BindingSource jugadorBindingSource)
         {
             this.dataGridViewJugador.DataSource = jugadorBindingSource;
         }
         public void EnlazarPartidaBindigSource(BindingSource partidaBindingSource)
         {
-            this.comboBoxPartidas.DataSource = partidaBindingSource;
+            this.dataGridPartida.DataSource = partidaBindingSource;
         }
         public void EnlazarTopBindigSource(BindingSource topBindingSource)
         {
@@ -54,7 +57,7 @@ namespace WinFormsApptTestPP2
         /// Para evitar que el formulario Estadistica sea instanciado
         /// mas de una vez y que solo exista una unica instancia de ella.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>de vuelve la instancia</returns>
         public static FormEstadisticas InstanciaUnica()
         {
             // Si el form esta cerrado / no instanciado
@@ -71,7 +74,8 @@ namespace WinFormsApptTestPP2
 
                 FormEstadisticas.formInstancia.BringToFront(); // Trae como vista principal
             }
-            return FormEstadisticas.formInstancia;
+            return FormEstadisticas.formInstancia; // Devolvemos la instancia
         }
+
     }
 }

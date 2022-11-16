@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using Modelo.Enumeraciones;
 using WinFormsApptTestPP2.models.Presentador;
 using WinFormsApptTestPP2.models.Interfaz;
+using System.Runtime.ExceptionServices;
+using Modelo.Excepciones;
 
 namespace WinFormsApptTestPP2
 {
@@ -62,6 +64,7 @@ namespace WinFormsApptTestPP2
         public event EventHandler EventoIniciarPartida;
         public event EventHandler EventoQuitarJugador;
         public event EventHandler EventoAgregarJugador;
+        public event EventHandler EventAcciones;
         #endregion
 
         public AgregarJugador()
@@ -101,6 +104,12 @@ namespace WinFormsApptTestPP2
                 this.EventoAgregarJugador?.Invoke(this, EventArgs.Empty);
             };
 
+            // Acciones de jugador
+            this.btnAcciones.Click += delegate
+            {
+                this.EventAcciones?.Invoke(this, EventArgs.Empty);
+            };
+
             /// cerrar fom
             this.button3.Click += delegate
             {
@@ -109,21 +118,17 @@ namespace WinFormsApptTestPP2
 
         }
 
+        #region Funciones
         public void limpiarTextBox()
         {
             this.textBoxNombre.Clear();
             this.textBoxAlias.Clear();
         }
 
-        private void AgregarJugador_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (salaValida == true)
-            {
-                return;
-            }
-
-            RestablecerSeleccionados();
-        }
+        /// <summary>
+        /// Restablece el estado del jugador
+        /// en Disponible
+        /// </summary>
         public void RestablecerSeleccionados()
         {
             foreach (var aux in this.listBoxJugadoresSala.Items)
@@ -132,6 +137,21 @@ namespace WinFormsApptTestPP2
                 new JugadorRepositorio().editar((Jugador)aux);
             }
         }
+        #endregion
+
+        #region BindingSource
+        public void EnlazarJugadoresBindingSource(BindingSource jugadores)
+        {
+            this.listBoxJugadoresRegistrados.DataSource = jugadores;
+        }
+        public void EnlazarJugadorSalaBindingSource(BindingSource jugadorSala)
+        {
+            this.listBoxJugadoresSala.DataSource = jugadorSala;
+
+        }
+        #endregion
+
+        #region Eventos
         private void textBoxCantidadRondas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
@@ -143,14 +163,30 @@ namespace WinFormsApptTestPP2
                 e.Handled = false;
             }
         }
-        public void EnlazarJugadoresBindingSource(BindingSource jugadores)
-        {
-            this.listBoxJugadoresRegistrados.DataSource = jugadores;
-        }
-        public void EnlazarJugadorSalaBindingSource(BindingSource jugadorSala)
-        {
-            this.listBoxJugadoresSala.DataSource = jugadorSala;
 
+        private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
+
+
+        private void AgregarJugador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (salaValida == true)
+            {
+                return;
+            }
+
+            RestablecerSeleccionados();
+        }
+        #endregion
+
     }
 }

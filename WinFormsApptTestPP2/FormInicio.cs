@@ -33,6 +33,16 @@ namespace WinFormsApptTestPP2
             {
                 this.EventoMostrarEstadistica?.Invoke(this, EventArgs.Empty);
             };
+
+            this.dataGridView1.CellClick += delegate
+            {
+                this.EventoClickCell?.Invoke(this, EventArgs.Empty);
+            };
+
+            this.btnActualizar.Click += delegate
+            {
+                EventoActualizarTabla?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         /// <summary>
@@ -40,5 +50,28 @@ namespace WinFormsApptTestPP2
         /// </summary>
         public event EventHandler EventoMostrarAgregarJugador;
         public event EventHandler EventoMostrarEstadistica;
+        public event EventHandler EventoClickCell;
+        public event EventHandler EventoActualizarTabla;
+
+        /// <summary>
+        /// Enlaza el menu de Salas
+        /// Utilizo un IvokeRequired por si se encuentra en otro hilo
+        /// </summary>
+        /// <param name="enlazar"></param>
+        public void EnlazarMenus(BindingSource enlazar)
+        {
+
+            if (this.dataGridView1.InvokeRequired)
+            {
+                this.BeginInvoke((MethodInvoker)delegate () {
+
+                    this.dataGridView1.DataSource = enlazar;
+                });
+            }
+            else
+            {
+                this.dataGridView1.DataSource = enlazar;
+            }
+        }
     }
 }

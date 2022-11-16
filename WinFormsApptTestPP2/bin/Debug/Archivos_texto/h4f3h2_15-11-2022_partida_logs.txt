@@ -1,0 +1,19 @@
+jugador_dos - tiene la mano*******
+jugador_dos - Fue salteado
+messi - tiene la mano*******
+messi - Recogio una carta del mazo
+messi - Paso su turno
+jugador - tiene la mano*******
+jugador - Tiro su carta: AZUL * NONE  * 2
+cristiano  - tiene la mano*******
+cristiano  - Recogio una carta del mazo
+cristiano  - Cambio el color de la carta: AZUL
+cristiano  - Tiro su carta: AZUL * CAMBIAR_COLOR  * 3
+jugador_dos - tiene la mano*******
+jugador_dos - Recogio una carta del mazo
+jugador_dos - Tiro su carta: AZUL * NONE  * 0
+messi - tiene la mano*******
+messi - Tiro su carta: AZUL * NONE  * 9
+jugador - tiene la mano*******
+jugador - Tiro su carta: AZUL * NONE  * 8
+cristiano  - tiene la mano*******

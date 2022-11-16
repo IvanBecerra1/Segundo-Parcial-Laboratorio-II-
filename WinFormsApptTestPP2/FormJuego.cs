@@ -13,83 +13,81 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApptTestPP2.models;
 using WinFormsApptTestPP2.models.Interfaz;
 
 namespace WinFormsApptTestPP2
 {
     public partial class FormJuego : Form, IJuego
     {
-
-        private Jugador turnoJugador;
-        private bool terminoRonda;
-
         private ArchivosTexto archivosTexto;
-
-        private List<ArchivosLogs> archivosLogs;
-
-
         private delegate void ActualizarArchivos();
         private event ActualizarArchivos EventoActualizarArchivos;
+        private bool terminar;
 
+        #region Setters
+        public void setRonda(int i) => this.textBoxRondas.Text = i.ToString();
+        public void setNotificacion(string value) => this.lblNotificacion.Text = value;
+        public void setTextNombre(string value) => this.lblNombreJugador.Text = value;
+        public void setCartaMesa(CartaUno carta)
+        {
+            this.listBoxCartaMesa.Items.Clear();
+            this.listBoxCartaMesa.Items.Add(carta);
+        }
+        
+        public void setMostrarCartaJugador(bool value)
+        {
+            this.listBoxCartaJugador.Visible = value;
+            this.lblMostrarMensajeCartas.Visible = !value;
+        }
+
+        public void setArchivos(ArchivosLogs value)
+        {
+            this.archivosTexto.AgregarAlArchivo(value);
+            this.EventoActualizarArchivos?.Invoke();// llamamos al evento actualizar
+        }
+        public void setTerminoRonda(bool value)
+        {
+            this.terminar = value;
+            if (this.terminar == true)
+            {
+                this.Dispose(true);
+                this.Close();
+            };
+        }
+        #endregion
 
         #region propiedad
+
+        // nolo uso
+        public List<CartaUno> ListaCartasJugador
+        {
+            get; set;
+        }
         public int Rondas
         {
             get {
-
-
                 int ronda = int.TryParse(this.textBoxRondas.Text, out _) ? Convert.ToInt32(this.textBoxRondas.Text) : 0;
-
                 return ronda;
             }
             set
             {
                 if (this.InvokeRequired)
-                {
-
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-                        this.textBoxRondas.Text = value.ToString();
-                    });
-                }
+                    this.BeginInvoke((MethodInvoker)delegate () { setRonda(value); });
                 else
-                {
-                    this.textBoxRondas.Text = value.ToString();
-                }
-
+                    setRonda(value);
             }
         }
-        public List<CartaUno> ListaCartasJugador
-        {
-            get; set;
-        }
+       
         public CartaUno CartaMesa
         {
-            get
-            {
-
-                //new CartaUno(Libreria.Enumeraciones.ETipoCarta.NONE,1,Modelo.Enumeraciones.ETipoColor.ROJO);
-                return (CartaUno)this.listBoxCartaMesa.Items[0];
-            }
+            get => (CartaUno)this.listBoxCartaMesa.Items[0];
             set
             {
-
                 if (this.InvokeRequired)
-                {
-
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-                        this.listBoxCartaMesa.Items.Clear();
-                        this.listBoxCartaMesa.Items.Add(value);
-                    });
-                }
+                    this.BeginInvoke((MethodInvoker)delegate (){ setCartaMesa(value); });
                 else
-                {
-                    this.listBoxCartaMesa.Items.Clear();
-                    this.listBoxCartaMesa.Items.Add(value);
-                }
-
-
+                    setCartaMesa(value);
             }
         }
         public List<CartaUno> ListaCartaMazo
@@ -97,95 +95,30 @@ namespace WinFormsApptTestPP2
             get { List<CartaUno> lista = (List<CartaUno>)this.listBoxCartaMazo.DataSource; return lista; }
             set { this.listBoxCartaMazo.DataSource = value; }
         }
-        public Jugador TurnoJugador
-        {
-            get
-            {
-
-                return this.turnoJugador;
-
-            }
-            set
-            {
-
-                if (this.InvokeRequired)
-                {
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-                        this.turnoJugador = value;
-                        this.textBox1.Text = this.turnoJugador.ToString();
-                        this.lblNombreJugador.Text = this.turnoJugador.Nombre;
-                    });
-                }
-                else
-                {
-                    this.turnoJugador = value;
-                    this.textBox1.Text = this.turnoJugador.ToString();
-                    this.lblNombreJugador.Text = this.turnoJugador.Nombre;
-                }
-
-            }
-        }
         public List<Jugador> ListaJugadores
         {
             get { List<Jugador> lista = (List<Jugador>)this.listBoxJugadores.DataSource; return lista; }
             set { this.listBoxJugadores.DataSource = value; }
         }
-
         public string Notificacion
         {
-            get
-            {
-                return this.lblNotificacion.Text;
-            }
+            get => this.lblNotificacion.Text;
             set
             {
                 if (this.InvokeRequired)
-                {
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-                        this.lblNotificacion.Text = value;
-                    });
-                }
+                    this.BeginInvoke((MethodInvoker)delegate () { setNotificacion(value); });
                 else
-                {
                     this.lblNotificacion.Text = value;
-                }
             }
         }
-
         public bool TerminoRonda
         {
-            get
-            {
-
-                return this.terminoRonda;
-            }
             set
             {
-                this.terminoRonda = value;
-
                 if (this.InvokeRequired)
-                {
-                    
-
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-                        if (this.terminoRonda == true)
-                        {
-
-                            this.Close();
-                        }
-                    });
-                }
+                    this.BeginInvoke((MethodInvoker)delegate () { setTerminoRonda(value); }) ;
                 else
-                {
-                    if (this.terminoRonda == true)
-                    {
-                        this.Close();
-                    }
-                }
-
+                    setTerminoRonda(value);
             }
         }
 
@@ -194,80 +127,62 @@ namespace WinFormsApptTestPP2
             set
             {
                 if (this.InvokeRequired)
-                {
-
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-                        this.listBoxCartaJugador.Visible = value;
-                        this.lblMostrarMensajeCartas.Visible = !value;
-                    });
-                }
+                    this.BeginInvoke((MethodInvoker)delegate (){ setMostrarCartaJugador(value);});
                 else
-                {
-                    this.listBoxCartaJugador.Visible = value;
-                    this.lblMostrarMensajeCartas.Visible = !value;
-                }
+                    setMostrarCartaJugador(value);
             }
         }
 
         public ArchivosLogs Archivos {
-            get
-            {
-                return null;
-            }
             set
             {
-
                 if (this.InvokeRequired)
-                {
-
-                    this.BeginInvoke((MethodInvoker)delegate ()
-                    {
-
-                        this.archivosTexto.AgregarAlArchivo(value);
-                        this.EventoActualizarArchivos.Invoke();
-                    });
-                }
+                    this.BeginInvoke((MethodInvoker)delegate () { setArchivos(value); });
                 else
-                {
-
-                    this.archivosTexto.AgregarAlArchivo(value);
-                    this.EventoActualizarArchivos.Invoke();
-                }
+                    setArchivos(value);
             }
+        }
 
-
-
+        public string textTurnoJugador 
+        { 
+            set
+            {
+                if (this.InvokeRequired)
+                    this.BeginInvoke((MethodInvoker)delegate () { setTextNombre(value); });
+                else
+                    setTextNombre(value);
+            }
         }
         #endregion
 
 
-        public FormJuego(List<Jugador> lista)
+        public FormJuego()
         {
-            this.turnoJugador = new Jugador();
             this.archivosTexto = new ArchivosTexto();
-            this.archivosLogs = new List<ArchivosLogs>();
           
             InitializeComponent();
             InicializarEventos();
 
-          //  CheckForIllegalCrossThreadCalls = false;
-
             this.textBoxRondas.Text = "0";
-            this.ListaJugadores = lista;
         }
         public void InicializarEventos()
         {
             this.btnTirarCarta.Click += delegate { TirarCarta?.Invoke(this, EventArgs.Empty); };
             this.btnPasarTurno.Click += delegate { PasarTurno?.Invoke(this, EventArgs.Empty); };
             this.btnAgarrarCarta.Click += delegate { RecojerCarta?.Invoke(this, EventArgs.Empty); };
-            this.btnAbandonar.Click += delegate { abandonar?.Invoke(this, EventArgs.Empty); };
-            this.btnVerEstadisticaJugador.Click += delegate { VerEstadisticaJugador?.Invoke(this, EventArgs.Empty); };
+            this.btnAbandonar.Click += delegate
+            {
+                  abandonar?.Invoke(this, EventArgs.Empty);
+
+                  if (this.terminar == true)
+                  {
+                      this.Dispose(true);
+                        this.Close();
+                  };
+            };
             this.btnCantarUno.Click += delegate { CantarUno?.Invoke(this, EventArgs.Empty); };
             this.btnMostrarCarta.Click += delegate { BotonMostrarCarta?.Invoke(this, EventArgs.Empty); };
             this.EventoActualizarArchivos += CapturarEventoActualizarArchivos;
-
-            //     this.FormClosing += delegate { abandonar?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler TirarCarta;
@@ -278,20 +193,33 @@ namespace WinFormsApptTestPP2
         public event EventHandler VerEstadisticaJugador;
         public event EventHandler BotonMostrarCarta;
 
-
-        public void CapturarEventoActualizarArchivos()
-        {
-            this.listBoxArchivos.DataSource = archivosTexto.LeerArchivoLineaALinea();
-        }
+        #region Eventos
 
         /// <summary>
-        /// 
+        /// Captura el evento para actualizar la lista de 
+        /// mensajes del list box
         /// </summary>
-        /// <param name="cartasJugador"></param>
+        public void CapturarEventoActualizarArchivos()
+        {
+            this.listBoxArchivos.DataSource = this.archivosTexto.LeerArchivoLineaALinea();
+        }
+
+        private void FormJuego_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            RestablecerEstadoJugador();
+            e.Cancel = false;
+        }
+        #endregion
+
+        #region BindingSource
         public void cartasJugadorBindingSource(BindingSource cartasJugador)
         {
+            this.listBoxCartaJugador.DataSource = cartasJugador;
 
-            if (this.InvokeRequired)
+            /// Aun aplicando el InvokeRequired no llega a actualizar 
+            /// el binding source, dejo la porcion de codigo
+            /// que habia implementado
+            /*if (this.InvokeRequired)
             {
                 this.BeginInvoke((MethodInvoker)delegate ()
                 {
@@ -301,21 +229,16 @@ namespace WinFormsApptTestPP2
             else
             {
                 this.listBoxCartaJugador.DataSource = cartasJugador;
-            }
-
+            }*/
         }
 
-        private void FormJuego_FormClosing_1(object sender, FormClosingEventArgs e)
+        public void jugadoresDataSource(List<Jugador> jugadores)
         {
-            if (this.terminoRonda == true)
-            {
-                return;
-            }
-
-            RestablecerEstadoJugador();
-            e.Cancel = false;
+            this.listBoxJugadores.DataSource = jugadores;
         }
+        #endregion
 
+        #region funciones
         public void RestablecerEstadoJugador()
         {
             JugadorRepositorio repositorioJugador = new JugadorRepositorio();
@@ -325,6 +248,12 @@ namespace WinFormsApptTestPP2
                 aux.Estado = EEstadoJugador.DISPONIBLE;
                 repositorioJugador.editar(aux);
             }
+        }
+        #endregion
+
+        public override string ToString()
+        {
+            return  "JUEGO UNO";
         }
     }
 }

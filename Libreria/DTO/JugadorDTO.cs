@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Modelo.DTO
 {
     /// <summary>
-    /// Clase DTO: Data Access Object
+    /// Clase DTO: Data Transfer Object
     /// Para hacer la transeferencia de datos hacia la 
     /// interfaz grafica. Mas puntualmente en el Data grid del formulario
     /// 
@@ -41,7 +41,7 @@ namespace Modelo.DTO
     
         /// <summary>
         /// Metodo estatico para hacer la transferencia de datos 
-        /// entre la entidad jugador y el DTO jugador 
+        /// entre la entidad jugador y el DTO jugador, conocido como mapeador.
         /// </summary>
         /// <param name="jugadores">Recibe una entidad Jugador</param>
         /// <returns>La entidad mapeada</returns>

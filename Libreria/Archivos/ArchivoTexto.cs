@@ -30,6 +30,9 @@ namespace Modelo.Archivos
             GenerarPathUnico();
         }
 
+        /// <summary>
+        /// Genera un Path unico
+        /// </summary>
         public void GenerarPathUnico()
         {
             string pathGenerado = "";

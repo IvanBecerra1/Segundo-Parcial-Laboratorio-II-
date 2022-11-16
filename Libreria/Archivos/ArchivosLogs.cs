@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Modelo.Archivos
 {
+    /// <summary>
+    /// Archivos Losgs, su funcion solo es
+    /// guardar cada notificacion de la sala
+    /// cada accion sera registrado en un archivo Txt
+    /// </summary>
     public class ArchivosLogs
     {
         private string nombre;

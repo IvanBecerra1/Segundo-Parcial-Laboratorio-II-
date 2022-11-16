@@ -42,14 +42,14 @@ namespace WinFormsApptTestPP2.models.Presentador
             this.listaJugadorDTO = new List<JugadorDTO>();
             this.listaTopJugadorDTO = new List<JugadorTopDTO>();
 
-            this.estadistica.EnlazarJugadorBindigSource(jugadorBindingSource);
-            this.estadistica.EnlazarPartidaBindigSource(partidaBindingSource);
-            this.estadistica.EnlazarTopBindigSource(jugadorTop15BindingSource);
-
-            this.estadistica.EventoClickComboBox += CapturaEventoClickComboBox;
+            this.estadistica.EventoClickComboBox += CapturaEventoClickDataGrid;
 
             this.CargarPartida();
             this.CargarJugadorTop15();
+
+            this.estadistica.EnlazarJugadorBindigSource(jugadorBindingSource);
+            this.estadistica.EnlazarPartidaBindigSource(partidaBindingSource);
+            this.estadistica.EnlazarTopBindigSource(jugadorTop15BindingSource);
         }
 
         #region Metodos 
@@ -61,6 +61,7 @@ namespace WinFormsApptTestPP2.models.Presentador
         {
             this.listaPartida = this.repositorio.obtenerTodo();
             this.partidaBindingSource.DataSource = this.listaPartida;
+            this.estadistica.EnlazarPartidaBindigSource(partidaBindingSource);
         }
         /// <summary>
         /// Carga los jugadores de la partida
@@ -68,6 +69,7 @@ namespace WinFormsApptTestPP2.models.Presentador
         /// </summary>
         public void CargarJugador()
         {
+            this.listaJugadorDTO.Clear();
             Partida partidaSeleccionada = (Partida)this.partidaBindingSource.Current;
 
             foreach (Jugador aux in partidaSeleccionada.Jugadores)
@@ -75,6 +77,7 @@ namespace WinFormsApptTestPP2.models.Presentador
                 this.listaJugadorDTO.Add(JugadorDTO.MapperEntidad(aux));
             }
             this.jugadorBindingSource.DataSource = this.listaJugadorDTO;
+            this.jugadorBindingSource.ResetBindings(true);
         }
 
         /// <summary>
@@ -104,7 +107,7 @@ namespace WinFormsApptTestPP2.models.Presentador
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="e"></param>
-        public void CapturaEventoClickComboBox(Object? obj, EventArgs e)
+        public void CapturaEventoClickDataGrid(Object? obj, EventArgs e)
         {
             CargarJugador();
         }

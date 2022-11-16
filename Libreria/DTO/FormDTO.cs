@@ -5,6 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Modelo.DTO
 {
+    /// <summary>
+    /// Patron
+    /// DTO = Data Transfer Object
+    /// 
+    /// Su funcionalidad
+    /// es traer datos de varios objetos/clases
+    /// y concentrarlo en una unica clase
+    /// 
+    /// En este caso FormDTO 
+    /// obtengo el numero de sala, la cantidad de jugador
+    /// y el formulario propio de la sala.
+    /// 
+    /// Despues me servira para implementarlo en el DataGrid de las salas
+    /// </summary>
     public class FormDTO
     {
         private int sala;

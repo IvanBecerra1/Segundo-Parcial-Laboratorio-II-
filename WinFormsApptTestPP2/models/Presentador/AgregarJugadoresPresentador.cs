@@ -1,6 +1,7 @@
 ﻿using Libreria.Entidades;
 using Modelo.Enumeraciones;
 using Modelo.Interfaces;
+using Modelo.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ using WinFormsApptTestPP2.models.Interfaz;
 
 namespace WinFormsApptTestPP2.models.Presentador
 {
+    /// <summary>
+    /// Funciones logicas que 
+    /// va tener el formulario AgregarJugador
+    /// </summary>
     public class AgregarJugadoresPresentador
     {
         // interfaces
@@ -30,6 +35,11 @@ namespace WinFormsApptTestPP2.models.Presentador
         // Delegados
         private Predicate<String> validarTextBox = e => string.IsNullOrEmpty(e);
 
+        /// <summary>
+        /// Inicializacion de variables
+        /// </summary>
+        /// <param name="agregarJugador"></param>
+        /// <param name="repositorio"></param>
         public AgregarJugadoresPresentador(
             IAgregarJugador agregarJugador, IRepositorio<Jugador> repositorio)
         {
@@ -48,6 +58,8 @@ namespace WinFormsApptTestPP2.models.Presentador
             this.agregarJugador.EventoRegistrarJugador += CatchEventoRegistrarJugador;
             this.agregarJugador.EventoIniciarPartida += CatchEventoIniciarPartida;
 
+            this.agregarJugador.EventAcciones += CatchEventoAcciones;
+
             this.agregarJugador.EnlazarJugadoresBindingSource(this.jugadoresBindingSource);
             this.agregarJugador.EnlazarJugadorSalaBindingSource(this.jugadoresEnSalaBindingSource);
 
@@ -62,6 +74,7 @@ namespace WinFormsApptTestPP2.models.Presentador
         {
             this.listaJugadores = repositorio.obtenerTodo();
             this.jugadoresBindingSource.DataSource = this.listaJugadores;
+            this.jugadoresBindingSource.ResetBindings(true);
         }
 
         /// <summary>
@@ -98,7 +111,6 @@ namespace WinFormsApptTestPP2.models.Presentador
 
                 if (jugadorSeleccionado.Estado == EEstadoJugador.JUGANDO)
                 {
-                    // Task Segundo...
                     MessageBox.Show($"Selecciona a un jugador que este disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -106,7 +118,6 @@ namespace WinFormsApptTestPP2.models.Presentador
                 jugadorSeleccionado.Estado = EEstadoJugador.JUGANDO;
                 this.repositorio.editar(jugadorSeleccionado);
 
-                // Evento ??  podria ser...
                 this.listaJugadoresEnSala.Add(jugadorSeleccionado);
                 CargarJugadorSala();
                 CargarJugador();
@@ -161,12 +172,14 @@ namespace WinFormsApptTestPP2.models.Presentador
                         && this.validarTextBox(this.agregarJugador.TextAlias))
                 {
                     // Mensaje Box de rellenar campos
+                    MessageBox.Show("Rellene los campos correspondiente", "Error", MessageBoxButtons.OK);
                     return;
                 }
 
                 if (this.repositorio.buscarPor(this.agregarJugador.TextAlias).Alias != null)
                 {
-                    // Mensaje box de que el usuario/alias existe
+                    // Mensaje box de que el usuario/alias
+                    MessageBox.Show("Ese Alias se encuentra en uso", "Error", MessageBoxButtons.OK);
                     return;
                 }
 
@@ -192,30 +205,44 @@ namespace WinFormsApptTestPP2.models.Presentador
         private void CatchEventoIniciarPartida(Object? obj, EventArgs e)
         {
             //botonCerrar = true;
-            if (this.agregarJugador.Ronda <= 3)
+            if (this.agregarJugador.Ronda <= 2)
             {
-                Task taskNotifiacion = Task.Run(() =>
-                {
-                    MessageBox.Show($"Ingrese una ronda mayor a 3", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                });
+                MessageBox.Show($"Ingrese una ronda mayor a 2", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (this.listaJugadoresEnSala.Any() == false 
                 || this.listaJugadoresEnSala.Count <= 1 
-                    || this.listaJugadoresEnSala.Count > 3)
+                    || this.listaJugadoresEnSala.Count > 4)
             {
-                Task tarea = Task.Run(() =>
-                {
-                    MessageBox.Show($"Ingrese almenos: 2-4 Jugadores", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                });
+                MessageBox.Show($"Ingrese almenos: 2-4 Jugadores", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-
             this.agregarJugador.SalaValida = true;
         }
 
+        /// <summary>
+        /// Evento para abrir el menu de acciones
+        /// y poder manipular partes del Crud en usuarios
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="e"></param>
+        private void CatchEventoAcciones(Object? obj, EventArgs e)
+        {
+            if (this.jugadoresBindingSource.Current == null)
+            {
+                MessageBox.Show($"Selecciona a un jugador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            Jugador jugadorSeleccionado = (Jugador)this.jugadoresBindingSource.Current;
+
+            IAcciones iAcciones = new FormAcciones();
+            IRepositorio<Jugador> iRepositorio = new JugadorRepositorio();
+            AccionesPresentacion presentador = new AccionesPresentacion(iAcciones, iRepositorio, jugadorSeleccionado);
+            ((FormAcciones)iAcciones).ShowDialog();
+
+            this.CargarJugador();//actualizamos
+        }
         #endregion
 
     }

@@ -38,6 +38,7 @@
             // 
             // listBoxJugadores
             // 
+            this.listBoxJugadores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxJugadores.FormattingEnabled = true;
             this.listBoxJugadores.ItemHeight = 15;
             this.listBoxJugadores.Location = new System.Drawing.Point(12, 94);
@@ -47,6 +48,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 63);
@@ -57,6 +59,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(14, 215);
@@ -67,6 +70,7 @@
             // 
             // lblNombreGanador
             // 
+            this.lblNombreGanador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombreGanador.AutoSize = true;
             this.lblNombreGanador.BackColor = System.Drawing.Color.Aquamarine;
             this.lblNombreGanador.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -78,6 +82,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(124, 18);
@@ -88,6 +93,7 @@
             // 
             // btnTerminar
             // 
+            this.btnTerminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTerminar.Location = new System.Drawing.Point(87, 371);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(221, 44);
@@ -101,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(432, 445);
+            this.ClientSize = new System.Drawing.Size(423, 478);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNombreGanador);

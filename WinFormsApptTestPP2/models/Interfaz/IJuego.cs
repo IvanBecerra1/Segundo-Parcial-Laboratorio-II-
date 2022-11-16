@@ -18,10 +18,10 @@ namespace WinFormsApptTestPP2.models.Interfaz
         public event EventHandler PasarTurno;
         public event EventHandler abandonar;
         public event EventHandler CantarUno;
-        public event EventHandler VerEstadisticaJugador;
         public event EventHandler BotonMostrarCarta;
 
         void cartasJugadorBindingSource(BindingSource cartasJugador);
+        void jugadoresDataSource(List<Jugador> jugadores);
 
         public int Rondas
         {
@@ -47,12 +47,6 @@ namespace WinFormsApptTestPP2.models.Interfaz
             set;
         }
 
-        public Jugador TurnoJugador
-        {
-            get;
-            set;
-        }
-
         public List<Jugador> ListaJugadores
         {
             get;
@@ -67,7 +61,6 @@ namespace WinFormsApptTestPP2.models.Interfaz
 
         public bool TerminoRonda
         {
-            get;
             set;
         }
 
@@ -78,7 +71,11 @@ namespace WinFormsApptTestPP2.models.Interfaz
 
         public ArchivosLogs Archivos
         {
-            get;
+            set;
+        }
+
+        public string textTurnoJugador
+        {
             set;
         }
     }

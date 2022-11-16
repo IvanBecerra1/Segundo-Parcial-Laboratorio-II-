@@ -34,14 +34,11 @@
             this.btnPasarTurno = new System.Windows.Forms.Button();
             this.btnAgarrarCarta = new System.Windows.Forms.Button();
             this.listBoxCartaMazo = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxRondas = new System.Windows.Forms.TextBox();
             this.listBoxJugadores = new System.Windows.Forms.ListBox();
             this.btnCantarUno = new System.Windows.Forms.Button();
             this.btnAbandonar = new System.Windows.Forms.Button();
-            this.btnVerEstadisticaJugador = new System.Windows.Forms.Button();
             this.lblTurno = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxArchivos = new System.Windows.Forms.ListBox();
@@ -113,29 +110,11 @@
             this.listBoxCartaMazo.TabIndex = 5;
             this.listBoxCartaMazo.Visible = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(352, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(236, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Turno del jugador:";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(458, 25);
+            this.label2.Location = new System.Drawing.Point(236, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 9;
@@ -144,9 +123,9 @@
             // textBoxRondas
             // 
             this.textBoxRondas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxRondas.Location = new System.Drawing.Point(521, 22);
+            this.textBoxRondas.Location = new System.Drawing.Point(352, 57);
             this.textBoxRondas.Name = "textBoxRondas";
-            this.textBoxRondas.Size = new System.Drawing.Size(100, 23);
+            this.textBoxRondas.Size = new System.Drawing.Size(221, 23);
             this.textBoxRondas.TabIndex = 8;
             // 
             // listBoxJugadores
@@ -154,7 +133,7 @@
             this.listBoxJugadores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxJugadores.FormattingEnabled = true;
             this.listBoxJugadores.ItemHeight = 15;
-            this.listBoxJugadores.Location = new System.Drawing.Point(807, 266);
+            this.listBoxJugadores.Location = new System.Drawing.Point(807, 226);
             this.listBoxJugadores.Name = "listBoxJugadores";
             this.listBoxJugadores.Size = new System.Drawing.Size(408, 139);
             this.listBoxJugadores.TabIndex = 10;
@@ -178,16 +157,6 @@
             this.btnAbandonar.TabIndex = 12;
             this.btnAbandonar.Text = "Cancelar Partida";
             this.btnAbandonar.UseVisualStyleBackColor = true;
-            // 
-            // btnVerEstadisticaJugador
-            // 
-            this.btnVerEstadisticaJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnVerEstadisticaJugador.Location = new System.Drawing.Point(807, 412);
-            this.btnVerEstadisticaJugador.Name = "btnVerEstadisticaJugador";
-            this.btnVerEstadisticaJugador.Size = new System.Drawing.Size(408, 43);
-            this.btnVerEstadisticaJugador.TabIndex = 13;
-            this.btnVerEstadisticaJugador.Text = "Ver estadisticas del jugador";
-            this.btnVerEstadisticaJugador.UseVisualStyleBackColor = true;
             // 
             // lblTurno
             // 
@@ -279,14 +248,11 @@
             this.Controls.Add(this.lblNombreJugador);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTurno);
-            this.Controls.Add(this.btnVerEstadisticaJugador);
             this.Controls.Add(this.btnAbandonar);
             this.Controls.Add(this.btnCantarUno);
             this.Controls.Add(this.listBoxJugadores);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxRondas);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBoxCartaMazo);
             this.Controls.Add(this.btnAgarrarCarta);
             this.Controls.Add(this.btnPasarTurno);
@@ -312,8 +278,6 @@
         private System.Windows.Forms.Button btnPasarTurno;
         private System.Windows.Forms.Button btnAgarrarCarta;
         private System.Windows.Forms.ListBox listBoxCartaMazo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxRondas;
         private System.Windows.Forms.ListBox listBoxJugadores;
