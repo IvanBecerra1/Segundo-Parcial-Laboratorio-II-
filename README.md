@@ -27,7 +27,7 @@ una vez que la ronda finalizo.
 ### Diagrama del Modelo de entidades
 [![diagrama1.png](https://i.postimg.cc/YCJt4gXp/diagrama1.png)](https://postimg.cc/gxqCQwF5)
 
-[![diagrama2.png](https://i.postimg.cc/WzWvsJFc/diagrama2.png)](https://postimg.cc/K3MVNjD
+[![diagrama2.png](https://i.postimg.cc/WzWvsJFc/diagrama2.png)](https://postimg.cc/K3MVNjD0)
 
 ### Diagrama de Test Unitarios
 [![Diagrama-Test-Unitarios.png](https://i.postimg.cc/qRGrZFpR/Diagrama-Test-Unitarios.png)](https://postimg.cc/BLtRjML9)
