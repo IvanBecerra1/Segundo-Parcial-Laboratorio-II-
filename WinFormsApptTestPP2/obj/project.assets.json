@@ -478,8 +478,8 @@
     },
     "Modelo/1.0.0": {
       "type": "project",
-      "path": "../../../Desktop/parcial II laboratorio/Libreria/Modelo.csproj",
-      "msbuildProject": "../../../Desktop/parcial II laboratorio/Libreria/Modelo.csproj"
+      "path": "../Libreria/Modelo.csproj",
+      "msbuildProject": "../Libreria/Modelo.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -493,11 +493,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
+      "projectUniqueName": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
       "projectName": "WinFormsApptTestPP2",
-      "projectPath": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
+      "projectPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\WinFormsApptTestPP2.csproj",
       "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ivan\\source\\repos\\WinFormsApptTestPP2\\obj\\",
+      "outputPath": "C:\\Users\\Ivan\\Desktop\\parcial II laboratorio\\WinFormsApptTestPP2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
