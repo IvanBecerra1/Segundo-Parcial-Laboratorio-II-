@@ -58,9 +58,21 @@ Implemente la relacion de Muchos a Muchos en la tabla Partidas con Jugadores, de
 > Utilice la escritura de archivos mas que nada para almacenar Logs/Acciones que se producen en la Sala de juego
 
 ### Interfaces
-> Utilice Interfaces en varias ocaciones
-  1. IRepositorio, una interfaz dedicada al crud que se lleva acabo en los     
+> Utilice Interfaces en varias ocaciones:
+  IRepositorio, una interfaz dedicada al crud que se lleva acabo en los     
      distintas entidades, lo implemente porque es buena practica y porque y        tambien el hecho de que cada entidad que este relacionada al crud, lleva 
      la misma funcionalidad, sabiendo que la implementacion logica cada uno 
      pueda variar 
 
+  IJuegoCartas, en esta interfaz implemente las funcionalidades que llevaria     un juego de cartas, independientemente si es de Uno, EscobaQuince, porque en 
+  si las funciones basicas/principales es compartida entre los juegos de 
+  cartas.
+
+### Delegados
+> Implemente los delegados en la parte de las funcionalidades del juego, para llevar acabo verificaciones que tendria que hacer constante, esto me permitio simplemente llamar al delegado y realizar la tarea. Tambien lleve acabo delegados cortos para verificar y validar datos del formulario 
+
+### Task 
+> Lleve acabo el uso de Task para poder abrir varias salas sin que perjudique ni me condicione la principal, tambien implemente en el momento que un jugador lanza una carta, le de 5 segundos antes de cambiar de mano para que pueda realizar alguna accion.
+
+### Eventos
+> Lleve acabo los eventos para invocar metodos que estan implementadas en otra clase, en especial cuando aplique el modelo MVP. No obstante tambien utilice en los formularios, mas especificamente en partes de las propiedades, debido a que necesitaba llamar a una funcionalidad cuando se le asigne valor a una propiedad.
