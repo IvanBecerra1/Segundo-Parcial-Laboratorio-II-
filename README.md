@@ -78,7 +78,7 @@ Implemente la relacion de Muchos a Muchos en la tabla Partidas con Jugadores, de
 > Lleve acabo los eventos para invocar metodos que estan implementadas en otra clase, en especial cuando aplique el modelo MVP. No obstante tambien utilice en los formularios, mas especificamente en partes de las propiedades, debido a que necesitaba llamar a una funcionalidad cuando se le asigne valor a una propiedad.
 
 ## Propuesta de valor agregado
-> Mi propuesta esta vez no fue enfocarme en el diseño del formulario, si no que esta vez me puse a investigar como mejorar y crear codigo mas limpio y mejor estruturado. 
+> Mi propuesta esta vez no fue enfocarme en el diseño del formulario, si no que esta vez me puse a investigar como mejorar y crear codigo mas limpio y mejor estructurado. 
 ### SOLID
 > Lleve los principios de SOLID, para estructurar mejor la parte de entidades, puntualmente me aplique el Principio de Responabilidad Unica
 en las parte de las funcionalidades de cartas. Este principio dice que una entidad debe tener una unica responsabilidad, en este caso
