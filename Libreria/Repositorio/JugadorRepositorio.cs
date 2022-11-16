@@ -143,7 +143,7 @@ namespace Modelo.Repositorio
                                         FROM " + TABLA + @" j
                                         INNER JOIN Estadisticas e
                                         ON j.id_estadistica = e.id
-                                        WHERE j.id = @id OR j.alias_jugador LIKE @alias+'%'";
+                                        WHERE j.id = @id OR j.alias_jugador LIKE @alias";
 
                     comando.Parameters.AddWithValue("@id", id);
                     comando.Parameters.AddWithValue("@alias", alias);
@@ -249,6 +249,37 @@ namespace Modelo.Repositorio
                 throw new RepositorioExcepcion("Se produjo un error, en la consulta: ConsultaJugadores Repositorio Partida");
             }
             return lista;
+        }
+
+        public int UltimoId()
+        {
+            int valor = -1;
+
+            try
+            {
+                using (conexion = new SqlConnection(Repositorio.CONEXION))
+                using (comando = new SqlCommand())
+                {
+                    conexion.Open();
+                    comando.Connection = conexion;
+                    comando.CommandText = @"SELECT MAX(id) 
+                                            FROM " + TABLA;
+
+                    using (lector = comando.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            valor = lector.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new RepositorioExcepcion("[EXPECION-REPOSITORIO]: Error al modificar la entidad: " + typeof(Jugador), ex);
+            }
+
+            return valor;
         }
     }
 }
