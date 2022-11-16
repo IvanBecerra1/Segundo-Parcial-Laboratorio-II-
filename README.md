@@ -76,3 +76,24 @@ Implemente la relacion de Muchos a Muchos en la tabla Partidas con Jugadores, de
 
 ### Eventos
 > Lleve acabo los eventos para invocar metodos que estan implementadas en otra clase, en especial cuando aplique el modelo MVP. No obstante tambien utilice en los formularios, mas especificamente en partes de las propiedades, debido a que necesitaba llamar a una funcionalidad cuando se le asigne valor a una propiedad.
+
+## Propuesta de valor agregado
+> Mi propuesta esta vez no fue enfocarme en el diseño del formulario, si no que esta vez me puse a investigar como mejorar y crear codigo mas limpio y mejor estruturado. 
+### SOLID
+> Lleve los principios de SOLID, para estructurar mejor la parte de entidades, puntualmente me aplique el Principio de Responabilidad Unica
+en las parte de las funcionalidades de cartas. Este principio dice que una entidad debe tener una unica responsabilidad, en este caso
+mi entidad Carta.cs, solo tendra el comportamiento principal de clase, pero sus funcionalidades estaran implementadas en otra clase, llamada UnoServicio, donde a la vez estara establecida con el contrato de IJuegosCarta. 
+> Principio de inversion de Dependencias: este es otro principio de SOLID, donde basicamente dice que una clase de alto nivel no dependa de uno de bajo nivel, y que se utilizara como dependencia a abstracciones (interfaces o clases abstractas). Implemente el principio en mi clase Sala, mi razonamiento fue que la clase no es necesario que de penda de la clase Uno (Juego del Uno).
+> Cabe aclarar que seguir los principios SOLID no es algo que es obligatorio y tampoco es una regla a seguir. Pero me fue interesante aplicarlo en este parcial, me ayudo y me dejo pensando mas de una vez
+
+### DRY
+> Trate de seguir este principio, que dice basicamente No te repitas, referenciando a no crear metodos repetidos e intentar reutilizar codigo lo que mas puedas. Lleve entonces acabo crear Metodos especificos, que solo cumplan una funcion y nada mas. Puede verse en mi clase UnoServicio.
+
+### Patron Singleton
+> Investige sobre este patron, basicamente es hacer que una clase en concreta solo pueda ser instanciada una unica vez y que si ya esta instanciada, te la devuelve esta instancia. Debe tener muchas mas funcionalidades, me parecio muy interesante... lo aplique para restrigir la instancia del formulario Estaditicas, para restriguir su instancia y evitar que se habran multiples ventanas de este tipo.
+
+### Modelo Vista Presentador
+> Es un Patron de diseño para el desarrollo de Applicaciones, mas enfocado en los formularios de windows form. Este patron hace que se divida en partes, por un lado la vista (parte visual), y por otro lado el manejo de entidades (modelo), este patron trabaja con un principio de Solid, el de Inversion de dependencias, es decir se utiliza abstracciones, mas puntualmente interfaces.
+Lleve entonces una implemenetacion, para cada formulario (vista) tiene su contrato (interfaz) que a la vez tendra una clase (presentador) que sera la encargada de manejar las funcionalidades entre la vista y la logica de negocio (manejo de entidades/modelo), ya que el contrato / interfaz tendra las funcionalidades que se van a comunicar con la clase presentador.
+
+## Conclusion: Trate de aplicar buenas practicas para el desarrollo de esta App, independientemente como los haya realizado, me divirtio y me intereso mucho el tema de como diseñar y estructurar un proyecto, es algo que aun siento que estoy "verde", pero llevar acabo estas practicas me hizo ver el codigo de diferente forma.
