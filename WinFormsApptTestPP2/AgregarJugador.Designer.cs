@@ -45,6 +45,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxCantidadRondas = new System.Windows.Forms.TextBox();
+            this.btnAcciones = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(119, 23);
             this.textBoxNombre.TabIndex = 1;
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_KeyPress);
             // 
             // label1
             // 
@@ -84,7 +86,6 @@
             this.btnAgregar.TabStop = false;
             this.btnAgregar.Text = "Registrar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnTerminar
             // 
@@ -95,7 +96,6 @@
             this.btnTerminar.TabIndex = 4;
             this.btnTerminar.Text = "Iniciar partida";
             this.btnTerminar.UseVisualStyleBackColor = true;
-            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
             // groupBox1
             // 
@@ -161,13 +161,12 @@
             // btnAgregarJugadorSala
             // 
             this.btnAgregarJugadorSala.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarJugadorSala.Location = new System.Drawing.Point(38, 323);
+            this.btnAgregarJugadorSala.Location = new System.Drawing.Point(179, 323);
             this.btnAgregarJugadorSala.Name = "btnAgregarJugadorSala";
-            this.btnAgregarJugadorSala.Size = new System.Drawing.Size(267, 42);
+            this.btnAgregarJugadorSala.Size = new System.Drawing.Size(126, 42);
             this.btnAgregarJugadorSala.TabIndex = 9;
             this.btnAgregarJugadorSala.Text = "Agregar jugador";
             this.btnAgregarJugadorSala.UseVisualStyleBackColor = true;
-            this.btnAgregarJugadorSala.Click += new System.EventHandler(this.btnAgregarJugadorSala_Click);
             // 
             // button2
             // 
@@ -178,7 +177,6 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Quitar jugador";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -189,7 +187,6 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox2
             // 
@@ -220,12 +217,22 @@
             this.textBoxCantidadRondas.TabIndex = 0;
             this.textBoxCantidadRondas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCantidadRondas_KeyPress);
             // 
+            // btnAcciones
+            // 
+            this.btnAcciones.Location = new System.Drawing.Point(42, 323);
+            this.btnAcciones.Name = "btnAcciones";
+            this.btnAcciones.Size = new System.Drawing.Size(130, 42);
+            this.btnAcciones.TabIndex = 13;
+            this.btnAcciones.Text = "Acciones";
+            this.btnAcciones.UseVisualStyleBackColor = true;
+            // 
             // AgregarJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(648, 458);
+            this.Controls.Add(this.btnAcciones);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -269,5 +276,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxAlias;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnAcciones;
     }
 }

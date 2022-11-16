@@ -1,0 +1,10 @@
+ivan - tiene la mano*******
+ivan - Recogio una carta del mazo
+ivan - Paso su turno
+ivan - tiene la mano*******
+ivan - Tiro su carta: VERDE * INVERTIR_RONDA  * 2
+ivan - tiene la mano*******
+ivan - Recogio una carta del mazo
+ivan - Paso su turno
+ivan - Se invirtio la ronda ()()()()()
+ivan - tiene la mano*******

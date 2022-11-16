@@ -1,0 +1,7 @@
+kjk - tiene la mano*******
+kjk - Tiro su carta: ROJO * NONE  * 0 
+ivan - tiene la mano*******
+ivan - Tiro su carta: ROJO * NONE  * 6 
+kjk - tiene la mano*******
+kjk - Tiro su carta: ROJO * NONE  * 7 
+ivan - tiene la mano*******

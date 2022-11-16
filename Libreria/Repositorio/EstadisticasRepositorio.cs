@@ -29,7 +29,7 @@ namespace Modelo.Repositorio
                     conexion.Open();
                     comando.Connection = conexion;
                     comando.CommandText = @"DELETE FROM" + TABLA +  @"
-                                            WHERE id_estadistica = @id";
+                                            WHERE id = @id";
 
                     comando.Parameters.AddWithValue("@id", entidad.Id);
                     comando.ExecuteNonQuery();
@@ -82,9 +82,9 @@ namespace Modelo.Repositorio
             {
                 conexion.Open();
                 comando.Connection = conexion;
-                comando.CommandText = @"SELECT * 
+                comando.CommandText = @"SELECT * FROM 
                                         " + TABLA +  @"
-                                        ORDER BY id_estadistica DESC";
+                                        ORDER BY id DESC";
 
                 using (lector = comando.ExecuteReader())
                 {

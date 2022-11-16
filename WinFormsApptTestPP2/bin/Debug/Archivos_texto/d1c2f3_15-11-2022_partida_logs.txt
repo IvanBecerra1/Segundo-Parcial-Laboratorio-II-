@@ -1,0 +1,9 @@
+ - Se invirtio la ronda ()()()()()
+jesus - tiene la mano*******
+jesus - Recogio una carta del mazo
+jesus - Paso su turno
+kjk - tiene la mano*******
+kjk - Tiro su carta: VERDE * ROBA_CUATRO  * 3
+jesus - tiene la mano*******
+jesus - Se llevo puesto un ROBA_CUATRO
+kjk - tiene la mano*******

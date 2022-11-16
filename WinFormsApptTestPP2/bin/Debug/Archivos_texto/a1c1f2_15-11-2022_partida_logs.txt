@@ -1,0 +1,9 @@
+kjk - tiene la mano*******
+kjk - Recogio una carta del mazo
+kjk - Tiro su carta: VERDE * NONE  * 7
+aaaa - tiene la mano*******
+aaaa - Recogio una carta del mazo
+aaaa - Tiro su carta: ROJO * ROBA_DOS  * 1
+kjk - tiene la mano*******
+kjk - Se llevo puesto un ROBA_DOS
+aaaa - tiene la mano*******

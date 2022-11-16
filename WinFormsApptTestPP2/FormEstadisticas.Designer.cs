@@ -28,148 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewJugadores = new System.Windows.Forms.DataGridView();
-            this.rowId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowAlias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowPartidasGanadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowPartidaPerdidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowPartidaAbandonadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowPartidasTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.rowId_table2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowNombre_table2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowAlias_table2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowTop_15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxPartidas = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSalirEstadistica = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJugadores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.dataGridViewJugador = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTop = new System.Windows.Forms.DataGridView();
+            this.dataGridPartida = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJugador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPartida)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewJugadores
-            // 
-            this.dataGridViewJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewJugadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rowId,
-            this.rowNombre,
-            this.rowAlias,
-            this.rowPartidasGanadas,
-            this.rowPartidaPerdidas,
-            this.rowPartidaAbandonadas,
-            this.rowPartidasTotales});
-            this.dataGridViewJugadores.Location = new System.Drawing.Point(49, 126);
-            this.dataGridViewJugadores.Name = "dataGridViewJugadores";
-            this.dataGridViewJugadores.RowTemplate.Height = 25;
-            this.dataGridViewJugadores.Size = new System.Drawing.Size(745, 150);
-            this.dataGridViewJugadores.TabIndex = 0;
-            // 
-            // rowId
-            // 
-            this.rowId.HeaderText = "#Id";
-            this.rowId.Name = "rowId";
-            this.rowId.ReadOnly = true;
-            // 
-            // rowNombre
-            // 
-            this.rowNombre.HeaderText = "Nombre";
-            this.rowNombre.Name = "rowNombre";
-            this.rowNombre.ReadOnly = true;
-            // 
-            // rowAlias
-            // 
-            this.rowAlias.HeaderText = "Alias";
-            this.rowAlias.Name = "rowAlias";
-            this.rowAlias.ReadOnly = true;
-            // 
-            // rowPartidasGanadas
-            // 
-            this.rowPartidasGanadas.HeaderText = "Ganados";
-            this.rowPartidasGanadas.Name = "rowPartidasGanadas";
-            this.rowPartidasGanadas.ReadOnly = true;
-            // 
-            // rowPartidaPerdidas
-            // 
-            this.rowPartidaPerdidas.HeaderText = "Perdidos";
-            this.rowPartidaPerdidas.Name = "rowPartidaPerdidas";
-            this.rowPartidaPerdidas.ReadOnly = true;
-            // 
-            // rowPartidaAbandonadas
-            // 
-            this.rowPartidaAbandonadas.HeaderText = "Abandonadas";
-            this.rowPartidaAbandonadas.Name = "rowPartidaAbandonadas";
-            this.rowPartidaAbandonadas.ReadOnly = true;
-            // 
-            // rowPartidasTotales
-            // 
-            this.rowPartidasTotales.HeaderText = "Partidas totales";
-            this.rowPartidasTotales.Name = "rowPartidasTotales";
-            this.rowPartidasTotales.ReadOnly = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rowId_table2,
-            this.rowNombre_table2,
-            this.rowAlias_table2,
-            this.rowTop_15});
-            this.dataGridView2.Location = new System.Drawing.Point(49, 319);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(443, 150);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // rowId_table2
-            // 
-            this.rowId_table2.HeaderText = "#Posicion";
-            this.rowId_table2.Name = "rowId_table2";
-            this.rowId_table2.ReadOnly = true;
-            // 
-            // rowNombre_table2
-            // 
-            this.rowNombre_table2.HeaderText = "nombre";
-            this.rowNombre_table2.Name = "rowNombre_table2";
-            this.rowNombre_table2.ReadOnly = true;
-            // 
-            // rowAlias_table2
-            // 
-            this.rowAlias_table2.HeaderText = "Alias";
-            this.rowAlias_table2.Name = "rowAlias_table2";
-            this.rowAlias_table2.ReadOnly = true;
-            // 
-            // rowTop_15
-            // 
-            this.rowTop_15.HeaderText = "Partidas ganadas";
-            this.rowTop_15.Name = "rowTop_15";
-            this.rowTop_15.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(49, 288);
+            this.label1.Location = new System.Drawing.Point(51, 354);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Top 15 de jugadores por partida ganadas";
             // 
-            // comboBoxPartidas
-            // 
-            this.comboBoxPartidas.FormattingEnabled = true;
-            this.comboBoxPartidas.Location = new System.Drawing.Point(50, 102);
-            this.comboBoxPartidas.Name = "comboBoxPartidas";
-            this.comboBoxPartidas.Size = new System.Drawing.Size(643, 23);
-            this.comboBoxPartidas.TabIndex = 3;
-            this.comboBoxPartidas.SelectedIndexChanged += new System.EventHandler(this.comboBoxPartidas_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(50, 71);
+            this.label2.Location = new System.Drawing.Point(51, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 28);
             this.label2.TabIndex = 4;
@@ -177,13 +61,44 @@
             // 
             // btnSalirEstadistica
             // 
-            this.btnSalirEstadistica.Location = new System.Drawing.Point(51, 23);
+            this.btnSalirEstadistica.Location = new System.Drawing.Point(241, 19);
             this.btnSalirEstadistica.Name = "btnSalirEstadistica";
             this.btnSalirEstadistica.Size = new System.Drawing.Size(167, 33);
             this.btnSalirEstadistica.TabIndex = 5;
             this.btnSalirEstadistica.Text = "Salir";
             this.btnSalirEstadistica.UseVisualStyleBackColor = true;
-            this.btnSalirEstadistica.Click += new System.EventHandler(this.btnSalirEstadistica_Click);
+            // 
+            // dataGridViewJugador
+            // 
+            this.dataGridViewJugador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewJugador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewJugador.Location = new System.Drawing.Point(51, 214);
+            this.dataGridViewJugador.Name = "dataGridViewJugador";
+            this.dataGridViewJugador.ReadOnly = true;
+            this.dataGridViewJugador.Size = new System.Drawing.Size(744, 121);
+            this.dataGridViewJugador.TabIndex = 6;
+            // 
+            // dataGridViewTop
+            // 
+            this.dataGridViewTop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTop.Location = new System.Drawing.Point(51, 398);
+            this.dataGridViewTop.Name = "dataGridViewTop";
+            this.dataGridViewTop.ReadOnly = true;
+            this.dataGridViewTop.RowTemplate.Height = 25;
+            this.dataGridViewTop.Size = new System.Drawing.Size(537, 86);
+            this.dataGridViewTop.TabIndex = 7;
+            // 
+            // dataGridPartida
+            // 
+            this.dataGridPartida.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPartida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPartida.Location = new System.Drawing.Point(51, 58);
+            this.dataGridPartida.Name = "dataGridPartida";
+            this.dataGridPartida.ReadOnly = true;
+            this.dataGridPartida.RowTemplate.Height = 25;
+            this.dataGridPartida.Size = new System.Drawing.Size(537, 131);
+            this.dataGridPartida.TabIndex = 8;
             // 
             // FormEstadisticas
             // 
@@ -191,45 +106,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(838, 496);
+            this.Controls.Add(this.dataGridPartida);
+            this.Controls.Add(this.dataGridViewTop);
+            this.Controls.Add(this.dataGridViewJugador);
             this.Controls.Add(this.btnSalirEstadistica);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxPartidas);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridViewJugadores);
             this.MaximumSize = new System.Drawing.Size(854, 535);
             this.MinimumSize = new System.Drawing.Size(854, 535);
             this.Name = "FormEstadisticas";
             this.Text = "FormEstadisticas";
-            this.Load += new System.EventHandler(this.FormEstadisticas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJugadores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJugador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPartida)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewJugadores;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowAlias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowPartidasGanadas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowPartidaPerdidas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowPartidaAbandonadas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowPartidasTotales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowId_table2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowNombre_table2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowAlias_table2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rowTop_15;
-        private System.Windows.Forms.ComboBox comboBoxPartidas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button btnSalirEstadistica;
+        private System.Windows.Forms.DataGridView dataGridViewJugador;
+        private System.Windows.Forms.DataGridView dataGridViewTop;
+        private System.Windows.Forms.DataGridView dataGridPartida;
     }
 }

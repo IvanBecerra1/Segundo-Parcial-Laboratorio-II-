@@ -26,11 +26,7 @@ namespace Modelo.Repositorio
         public Partida buscarPor(string dato)
         {
 
-            //    List<Partida> listaPartidas = new List<Partida>();
-
             int id = int.TryParse(dato, out _) ? Convert.ToInt32(dato) : 0;
-            //     string fecha = dato;
-
             Partida partida = new Partida();
             try
             {
@@ -69,7 +65,13 @@ namespace Modelo.Repositorio
             }
             return partida;
         }
-
+        /// <summary>
+        /// Solo es posible modificar la partida pero no
+        /// su relacion de N a N
+        /// </summary>
+        /// <param name="entidad"></param>
+        /// <returns></returns>
+        /// <exception cref="RepositorioExcepcion"></exception>
         public bool editar(Partida entidad)
         {
             bool seGuardo = false;
@@ -84,7 +86,7 @@ namespace Modelo.Repositorio
                     comando.CommandText = @"UPDATE " + TABLA + @"
                                             SET 
                                                 fecha = @fecha,
-                                                rondas = @rondas
+                                                rondas = @rondas,
                                                 id_ganador = @ganador
                                             WHERE id = @id";
 
@@ -94,7 +96,6 @@ namespace Modelo.Repositorio
                     comando.Parameters.AddWithValue("@ganador", entidad.Ganador.Id);
 
                     comando.ExecuteNonQuery();
-                    guardarJugadores(entidad.Jugadores);
                 }
                 seGuardo = true;
             }
@@ -124,9 +125,9 @@ namespace Modelo.Repositorio
 
 
                     comando.CommandText = @"DELETE FROM " + TABLA_RELACION + @" 
-                                            WHERE id_partida = @id";
+                                            WHERE id_partida = @idPartida";
 
-                    comando.Parameters.AddWithValue("@id", entidad.Id);
+                    comando.Parameters.AddWithValue("@idPartida", entidad.Id);
                     comando.ExecuteNonQuery();
                 }
                 seElimino = true;
@@ -139,13 +140,7 @@ namespace Modelo.Repositorio
             return seElimino;
         }
     
-        /// <summary>
-        /// Solo es posible modificar la partida pero no
-        /// su relacion de N a N
-        /// </summary>
-        /// <param name="entidad"></param>
-        /// <returns></returns>
-        /// <exception cref="RepositorioExcepcion"></exception>
+      
         public bool guardar(Partida entidad)
         {
             bool seGuardo = false;
@@ -165,6 +160,7 @@ namespace Modelo.Repositorio
                     comando.Parameters.AddWithValue("@ganador", entidad.Ganador.Id);
 
                     comando.ExecuteNonQuery();
+                    guardarJugadores(entidad.Jugadores);
                 }
                 seGuardo = true;
             }

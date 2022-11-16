@@ -1,4 +1,5 @@
 ﻿using Libreria.Entidades;
+using Modelo.DTO;
 using Modelo.Entidades;
 using Modelo.Repositorio;
 using System;
@@ -10,84 +11,71 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApptTestPP2.models.Interfaz;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WinFormsApptTestPP2
 {
-    public partial class FormEstadisticas : Form
+    public partial class FormEstadisticas : Form, IEstadistica
     {
-
-        private PartidaRepositorio repositorioPartida;
-        private JugadorRepositorio repositorioJugador;
-
+        private static FormEstadisticas formInstancia;
+        public event EventHandler EventoClickComboBox;
         public FormEstadisticas()
         {
-            this.repositorioPartida = new PartidaRepositorio();
-            this.repositorioJugador = new JugadorRepositorio();
-
             InitializeComponent();
-            CargarTablaTop15();
-        }
 
-        private void FormEstadisticas_Load(object sender, EventArgs e)
-        {
-            this.comboBoxPartidas.DataSource = this.repositorioPartida.obtenerTodo();
-            CargarTabla();
-        }
-        public void CargarTabla()
-        {
-            if (this.comboBoxPartidas.SelectedIndex == -1)
+            this.dataGridPartida.CellClick += delegate
             {
-                return;
-            }
+                this.EventoClickComboBox?.Invoke(this, EventArgs.Empty);
+            };
 
-            Partida partida = (Partida) this.comboBoxPartidas.Items[this.comboBoxPartidas.SelectedIndex];
-
-            this.dataGridViewJugadores.DataSource = null;
-            this.dataGridViewJugadores.Rows.Clear();
-
-            foreach (var aux in partida.Jugadores)
+            this.btnSalirEstadistica.Click += delegate
             {
-
-                int indice = this.dataGridViewJugadores.Rows.Add();
-                this.dataGridViewJugadores.Rows[indice].Cells[0].Value = aux.Id;
-                this.dataGridViewJugadores.Rows[indice].Cells[1].Value = aux.Nombre;
-                this.dataGridViewJugadores.Rows[indice].Cells[2].Value = aux.Alias; // crucero
-                this.dataGridViewJugadores.Rows[indice].Cells[3].Value = aux.Estadisticas.PartidasGanadas ; // fecha de viaje
-                this.dataGridViewJugadores.Rows[indice].Cells[4].Value = aux.Estadisticas.PartidasPerdidas; // Estado
-                this.dataGridViewJugadores.Rows[indice].Cells[5].Value = aux.Estadisticas.PartidasAbandonadas; // Estado
-                this.dataGridViewJugadores.Rows[indice].Cells[6].Value = aux.Estadisticas.PartidasTotales; // Estado
-            }
-
+                this.Close();
+            };
         }
 
-        public void CargarTablaTop15()
+        /// <summary>
+        /// Enlaze de control con BindingSource
+        /// </summary>
+        /// <param name="jugadorBindingSource"></param>
+        public void EnlazarJugadorBindigSource(BindingSource jugadorBindingSource)
         {
+            this.dataGridViewJugador.DataSource = jugadorBindingSource;
+        }
+        public void EnlazarPartidaBindigSource(BindingSource partidaBindingSource)
+        {
+            this.dataGridPartida.DataSource = partidaBindingSource;
+        }
+        public void EnlazarTopBindigSource(BindingSource topBindingSource)
+        {
+            this.dataGridViewTop.DataSource = topBindingSource;
+        }
 
-            List<Jugador> listaJugadores = this.repositorioPartida.ConsultarPorPartidasGanadas_Top(); 
-            this.dataGridView2.DataSource = null;
-            this.dataGridView2.Rows.Clear();
-
-            int posicion = 0;
-            foreach (var aux in listaJugadores)
+        /// <summary>
+        /// Patron de diseño: Singleton
+        /// Para evitar que el formulario Estadistica sea instanciado
+        /// mas de una vez y que solo exista una unica instancia de ella.
+        /// </summary>
+        /// <returns>de vuelve la instancia</returns>
+        public static FormEstadisticas InstanciaUnica()
+        {
+            // Si el form esta cerrado / no instanciado
+            if (FormEstadisticas.formInstancia == null || FormEstadisticas.formInstancia.IsDisposed)
             {
-                posicion++;
-                int indice = this.dataGridView2.Rows.Add();
-                this.dataGridView2.Rows[indice].Cells[0].Value = posicion;
-                this.dataGridView2.Rows[indice].Cells[1].Value = aux.Nombre;
-                this.dataGridView2.Rows[indice].Cells[2].Value = aux.Alias; // crucero
-                this.dataGridView2.Rows[indice].Cells[3].Value = aux.Estadisticas.PartidasGanadas;
+                // instanciamos una
+                FormEstadisticas.formInstancia = new FormEstadisticas();
             }
+            else // si no, volvemos a traer el formulario
+            {
+                /// por si la ventana esta minimizada
+                if (FormEstadisticas.formInstancia.WindowState == FormWindowState.Minimized)
+                    FormEstadisticas.formInstancia.WindowState = FormWindowState.Normal;
+
+                FormEstadisticas.formInstancia.BringToFront(); // Trae como vista principal
+            }
+            return FormEstadisticas.formInstancia; // Devolvemos la instancia
         }
 
-
-        private void comboBoxPartidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarTabla();
-        }
-
-        private void btnSalirEstadistica_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

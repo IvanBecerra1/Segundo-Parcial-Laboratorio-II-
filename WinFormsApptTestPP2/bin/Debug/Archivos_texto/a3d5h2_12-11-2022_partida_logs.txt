@@ -1,0 +1,8 @@
+ivan - tiene la mano*******
+ivan - Cambio el color de la carta: AZUL
+ivan - Tiro su carta: AZUL * CAMBIAR_COLOR  * 4 
+ivan - tiene la mano*******
+ivan - Tiro su carta: AZUL * SALTEAR_JUGADOR  * 2 
+sdadada - tiene la mano*******
+sdadada - Fue salteado
+ivan - tiene la mano*******

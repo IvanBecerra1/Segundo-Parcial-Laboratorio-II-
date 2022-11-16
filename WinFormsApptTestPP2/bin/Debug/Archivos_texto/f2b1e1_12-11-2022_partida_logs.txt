@@ -1,0 +1,9 @@
+ivan - tiene la mano*******
+ivan - Recogio carta del mazo
+ivan - Paso su turno
+sdadada - tiene la mano*******
+sdadada - Recogio carta del mazo
+sdadada - Paso su turno
+ivan - tiene la mano*******
+ivan - Tiro su carta: AZUL * NONE  * 3 
+sdadada - tiene la mano*******

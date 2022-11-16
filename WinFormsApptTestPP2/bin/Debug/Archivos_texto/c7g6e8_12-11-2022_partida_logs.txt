@@ -1,0 +1,9 @@
+kjk - tiene la mano*******
+kjk - Se llevo puesto un ROBA_CUATRO
+sdadada - tiene la mano*******
+sdadada - Tiro su carta: VERDE * NONE  * 5 
+kjk - tiene la mano*******
+kjk - Tiro su carta: VERDE * ROBA_CUATRO  * 3 
+sdadada - tiene la mano*******
+sdadada - Se llevo puesto un ROBA_CUATRO
+kjk - tiene la mano*******
